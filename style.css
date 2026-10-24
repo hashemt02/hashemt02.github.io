@@ -15,3 +15,5 @@ dialog{width:min(1020px,94vw);padding:0}dialog>.close{right:20px;top:12px;z-inde
 .detail-video video{display:block;width:100%;max-height:580px;object-fit:contain;background:#172b26;border-radius:4px}.detail-video figcaption{display:flex;align-items:center;justify-content:space-between;gap:16px}.detail-video figcaption button{font-size:11px;white-space:nowrap}
 
 .contact .contact-intro{max-width:590px;margin:26px auto 32px;color:#52654b;font-size:16px;line-height:1.7}.experience-overview h2{max-width:620px}@media(max-width:600px){.contact .contact-intro{font-size:14px;margin:22px auto 28px}}
+
+.hero-image>img{object-position:68% 35%}@media(max-width:760px){.hero-image>img{object-position:66% 35%}}
