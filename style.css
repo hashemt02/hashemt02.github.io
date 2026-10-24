@@ -3,3 +3,5 @@
 
 /* Research and company photography. */
 .field-notes{padding-top:0}.photo-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}.photo-grid figure{margin:0}.photo-grid img{width:100%;height:290px;object-fit:cover;border-radius:3px;display:block}.photo-grid figcaption{padding:14px 0 0;font-size:13px;font-weight:500}.photo-grid figcaption span{display:block;font-size:8px;letter-spacing:1.1px;color:var(--muted);margin-bottom:5px}.company-links{display:flex;gap:25px;flex-wrap:wrap;align-items:center}.bytes-event{margin:28px 0 0}.bytes-event img{width:100%;height:320px;object-fit:cover;object-position:50% 65%;display:block;border-radius:3px}.bytes-event figcaption{font-size:10px;color:#afbeb3;margin-top:9px}.about-photo img{object-position:50% 20%}@media(max-width:640px){.photo-grid{grid-template-columns:1fr;gap:28px}.photo-grid img{height:310px}.bytes-event img{height:330px}.field-notes{padding-top:0}}
+
+.cpu-preview{background:#eef0e7}.cpu-preview img{width:100%;height:100%;object-fit:contain;display:block;padding:8px}
