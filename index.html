@@ -6,12 +6,12 @@
 <meta content="width=device-width,initial-scale=1" name="viewport"/>
 <meta content="Hashem Taleb’s student portfolio: UC Berkeley EECS, radar research at Berkeley Lab, CPU and hardware projects, and software experience at Bytes." name="description"/>
 <title>Hashem Taleb — Electrical Engineering &amp; Systems</title>
-<link href="style.css?v=20261029-layout5" rel="stylesheet"/>
+<link href="style.css?v=20261029-sections6" rel="stylesheet"/>
 <meta content="#f4f3ee" name="theme-color"/>
 <meta content="Hashem Taleb — Electrical Engineering &amp; Systems" property="og:title"/>
 <meta content="UC Berkeley EECS. Atmospheric radar research, embedded electronics, digital design, and software." property="og:description"/>
 <meta content="website" property="og:type"/>
-<link href="assets/favicon.svg" rel="icon" type="image/svg+xml"/>
+<link href="assets/favicon.svg?v=20261029-ht" rel="icon" type="image/svg+xml"/>
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
@@ -55,9 +55,9 @@
 </span>
 </div>
 </div>
-<figure class="hero-image hero-portrait">
+<figure class="hero-image hero-networking">
 <div class="hero-tech-grid" aria-hidden="true"></div>
-<img alt="Portrait of Hashem Taleb" fetchpriority="high" src="assets/hero-portrait-extended-v2.png"/>
+<img alt="Hashem Taleb speaking with founders at a Bytes networking event" fetchpriority="high" src="assets/bytes-networking.jpg"/>
 <figcaption>
 <span>01 / HASHEM TALEB</span>
 <span>EECS · BERKELEY, CALIFORNIA</span>
@@ -80,28 +80,40 @@
 </div>
 <p>From low-power radar at Berkeley Lab to the software behind a growing startup. A closer look at what I build, how it works, and what I’m learning.</p>
 </div>
-<nav aria-label="Explore experiences" class="experience-links">
-<a href="#work">
+<nav aria-label="Explore portfolio chapters" class="experience-links chapter-links">
+<a href="#lbnl">
 <span>01 / RESEARCH</span>
-<strong>Berkeley Lab</strong>
-<small>Atmospheric radar · Embedded systems</small>
+<strong>LBNL Radar</strong>
+<small>Atmospheric sensing</small>
 <b>↓</b>
 </a>
 <a href="#bytes">
-<span>02 / ENTREPRENEURSHIP</span>
+<span>02 / STARTUP</span>
 <strong>Bytes</strong>
-<small>Software · Data infrastructure · Operations</small>
+<small>Software · Operations</small>
 <b>↓</b>
 </a>
-<a href="#berkeley">
-<span>03 / EDUCATION &amp; PROJECTS</span>
-<strong>UC Berkeley</strong>
-<small>CPU design · IEC · Coursework</small>
+<a href="#coursework">
+<span>03 / EDUCATION</span>
+<strong>Coursework</strong>
+<small>UC Berkeley EECS</small>
+<b>↓</b>
+</a>
+<a href="#course-projects">
+<span>04 / ACADEMIC BUILDS</span>
+<strong>Course Projects</strong>
+<small>CPU · Digital systems</small>
+<b>↓</b>
+</a>
+<a href="#personal-projects">
+<span>05 / INDEPENDENT</span>
+<strong>Personal Projects</strong>
+<small>Inverter · IEC</small>
 <b>↓</b>
 </a>
 </nav>
 </section>
-<section class="section experience-section" id="work">
+<section class="section experience-section chapter chapter-lbnl" id="work">
 <span id="lbnl">
 </span>
 <div class="section-head">
@@ -181,9 +193,10 @@
 </div>
 </section>
 </section>
-<section class="startup section experience-section" id="bytes">
+<section class="startup section experience-section chapter chapter-bytes" id="bytes">
 <div>
 <p class="eyebrow">02 / BYTES · MAY 2021 — APR 2025</p>
+<div class="bytes-wordmark"><span>bytes</span><small>RESTAURANT TECHNOLOGY</small></div>
 <h2>Building beyond
 the hardware.</h2>
 <p class="role">Co-founder · Software, data &amp; operations</p>
@@ -219,15 +232,15 @@ the hardware.</h2>
 </div>
 </div>
 </section>
-<section class="section experience-section berkeley" id="berkeley">
+<section class="section experience-section berkeley chapter chapter-berkeley" id="berkeley">
 <div class="section-head">
 <div>
-<p class="eyebrow">03 / UNIVERSITY OF CALIFORNIA, BERKELEY</p>
-<h2>Inside the architecture.</h2>
+<p class="eyebrow">03 / UC BERKELEY COURSEWORK</p>
+<h2>Academic foundation.</h2>
 </div>
-<p>Building a foundation in electrical engineering and computer science through coursework and hands-on projects.</p>
+<p>Degree progress, core technical subjects, and the theory behind the systems I build.</p>
 </div>
-<div class="timeline experience-role">
+<div class="timeline experience-role" id="coursework">
 <article>
 <div class="date">EXPECTED MAY 2028</div>
 <div>
@@ -237,8 +250,23 @@ the hardware.</h2>
 </div>
 </article>
 </div>
-<h3 class="subsection-title">Projects &amp; exploration</h3>
-<div class="project-grid berkeley-projects">
+<div class="coursework">
+<div>
+<p class="eyebrow">COURSEWORK / EECS</p>
+<h3>What I’m studying</h3>
+<p>Circuits, computation, and the mathematics connecting them.</p>
+</div>
+<div class="course-grid">
+<article><h4>Computer architecture</h4><p>RISC-V instruction sets, datapaths, ALU design, and register files.</p></article>
+<article><h4>Circuits &amp; electromagnetics</h4><p>Circuit analysis and electromagnetic systems.</p></article>
+<article><h4>Data structures &amp; mathematics</h4><p>Data structures, discrete mathematics, and probability.</p></article>
+<article><h4>Digital design</h4><p>Verilog and circuit-level digital systems.</p></article>
+</div>
+</div>
+<div class="chapter-subsection course-project-block" id="course-projects">
+<p class="eyebrow">04 / COURSE-RELATED PROJECTS</p>
+<h2>Built for class.<br/>Engineered beyond it.</h2>
+<div class="project-grid berkeley-projects single-project">
 <article class="project">
 <div class="cpu-preview visual">
 <img alt="Top-level RISC-V CPU datapath in Logisim-evolution" loading="lazy" src="assets/cpu-datapath.png"/>
@@ -253,52 +281,12 @@ the hardware.</h2>
 </div>
 <button class="text-link" data-project="cpu">View project ↗</button>
 </article>
-<article class="project">
-<div aria-hidden="true" class="fusion visual">
-<div class="orb">
-</div>
-<small>INERTIAL ELECTROSTATIC CONFINEMENT</small>
-</div>
-<p class="eyebrow">EXPERIMENTAL PHYSICS · IN PROGRESS</p>
-<h3>IEC plasma confinement</h3>
-<p>An experimental IEC fusion device project, integrating a vacuum chamber, electrode geometry, and a dual-stage pumping system.</p>
-<div class="tags">
-<span>Vacuum systems</span>
-<span>Experimental physics</span>
-</div>
-<button class="text-link" data-project="fusion">Project scope ↗</button>
-</article>
-</div>
-<div class="coursework">
-<div>
-<p class="eyebrow">ACADEMIC FOUNDATION</p>
-<h3>Coursework &amp; technical skills</h3>
-<p>Connecting the mathematics, circuits, and software behind complete engineering systems.</p>
-</div>
-<div class="course-grid">
-<article>
-<h4>Computer architecture</h4>
-<p>CS61C studies · RISC-V instruction sets, datapaths, ALU design, and register files.</p>
-</article>
-<article>
-<h4>Circuits &amp; electromagnetics</h4>
-<p>Circuit analysis and the electrical principles behind hardware and electromagnetic systems.</p>
-</article>
-<article>
-<h4>Data structures &amp; mathematics</h4>
-<p>Data structures, discrete mathematics, and probability as foundations for software and analytical problem solving.</p>
-</article>
-<article>
-<h4>Digital design</h4>
-<p>Verilog coursework in progress, alongside circuit-level CPU development in Logisim-evolution.</p>
-</article>
 </div>
 </div>
 </section>
-<section class="section additional-work">
-<p class="eyebrow">ADDITIONAL ENGINEERING WORK</p>
-<h2>Power electronics</h2>
-<div class="additional-project">
+<section class="section additional-work chapter chapter-personal" id="personal-projects">
+<div class="section-head"><div><p class="eyebrow">05 / PERSONAL PROJECTS</p><h2>Built from curiosity.</h2></div><p>Independent hardware experiments developed outside required coursework.</p></div>
+<div class="project-grid personal-project-grid">
 <article class="project">
 <div class="inverter-card visual">
 <img alt="Breadboard H-bridge powering anti-parallel red and blue LEDs" loading="lazy" src="assets/inverter-demo-poster.jpg"/>
@@ -314,6 +302,14 @@ the hardware.</h2>
 </div>
 <button class="text-link" data-project="inverter">View project ↗</button>
 </article>
+<article class="project">
+<div aria-hidden="true" class="fusion visual"><div class="orb"></div><small>INERTIAL ELECTROSTATIC CONFINEMENT</small></div>
+<p class="eyebrow">EXPERIMENTAL PHYSICS · IN PROGRESS</p>
+<h3>IEC plasma confinement</h3>
+<p>An independent fusion-device build integrating a vacuum chamber, electrode geometry, and dual-stage pumping.</p>
+<div class="tags"><span>Vacuum systems</span><span>High voltage</span><span>Experimental physics</span></div>
+<button class="text-link" data-project="fusion">Project scope ↗</button>
+</article>
 </div>
 </section>
 <section class="about section" id="about">
@@ -322,7 +318,7 @@ the hardware.</h2>
 <span>RADAR HARDWARE INTEGRATION.</span>
 </div>
 <div>
-<p class="eyebrow">04 / THE PERSON BEHIND THE PROJECTS</p>
+<p class="eyebrow">06 / THE PERSON BEHIND THE PROJECTS</p>
 <h2>Learning by<br/>
 <em>building things.</em>
 </h2>
@@ -364,7 +360,7 @@ the hardware.</h2>
 <p class="fine">¹ System metrics reported in the CASIS 2026 research poster. Research is collaborative; the poster lists the full author team.</p>
 </section>
 <section class="contact" id="contact">
-<p class="eyebrow">05 / NEXT CONNECTION</p>
+<p class="eyebrow">07 / NEXT CONNECTION</p>
 <h2>Let’s build
 something.</h2>
 <p class="contact-intro">If you’re hiring for an internship or research role, or would like to know more about a project, I’d be glad to connect.</p>
