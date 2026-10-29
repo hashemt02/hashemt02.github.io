@@ -59,6 +59,9 @@
   .photo-grid img{aspect-ratio:4/5}
 }
 
+.bytes-event video{display:block;width:100%;height:320px;object-fit:cover;object-position:center 73%;border-radius:22px;background:#1b241e}
+@media(max-width:680px){.bytes-event video{height:360px}}
+
 /* Portfolio chapters: visibly separate research, startup, academic, and personal work. */
 .chapter-links{grid-template-columns:repeat(5,minmax(0,1fr))}
 .chapter-links a{min-height:154px}
