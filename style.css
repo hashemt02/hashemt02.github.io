@@ -15,3 +15,46 @@
 @media(min-width:1500px){.hero-stage{min-height:650px}.hero-copy{padding-top:145px}.hero-portrait{width:1080px;height:980px;top:-385px;left:61%}}
 @media(max-width:1000px){.hero-stage{display:flex;flex-direction:column;gap:0}.hero-portrait{order:1;width:100%;background:linear-gradient(180deg,#d4442200,#d4442212);height:590px;margin:-115px 0 0;overflow:hidden}.hero-portrait>img{width:100%;height:100%;object-position:center bottom}.hero-portrait figcaption{display:none}.hero-portrait:hover>img{transform:none}.hero-copy{order:2;position:relative;z-index:2;padding-top:28px}.hero-side{display:none}}
 @media(max-width:680px){.hero-portrait{height:440px;margin:-45px 0 0}.hero-stage{gap:10px}.hero-copy{padding-top:15px}}
+
+/* Subject-aware image composition: preserve faces, hardware, and document edges. */
+.lbnl-header-image{height:clamp(540px,55vw,760px);background:#d9d8d1}
+.lbnl-header-image img{object-position:72% 58%}
+.photo-grid img{height:auto;aspect-ratio:4/5;object-fit:cover}
+.photo-grid figure:nth-child(1) img{object-position:center 76%}
+.photo-grid figure:nth-child(2) img{object-position:42% 58%}
+.photo-grid figure:nth-child(3) img{object-position:center 58%}
+.detail-photo-pair img{height:auto;aspect-ratio:4/3;object-fit:contain;background:#deddd5}
+.detail-figure img[src*="lbnl-director"]{object-fit:contain;object-position:center top}
+.detail-figure img[src*="lab-portrait"]{max-height:none;aspect-ratio:4/3;object-fit:contain;object-position:center;background:#deddd5}
+.detail-figure img[src*="sunset"]{object-position:center 58%}
+.detail-figure img[src*="radar-enclosures"],
+.detail-figure img[src*="controller-detail"],
+.detail-figure img[src*="embedded-prototype"],
+.detail-figure img[src*="relay-detail"]{object-fit:contain;object-position:center;background:#deddd5}
+.detail-figure img[src*="radar-pi-code"],
+.detail-figure img[src*="radar-run-log"],
+.detail-figure img[src*="radar-acquisition-log"],
+.detail-figure img[src*="radar-cfar-workbench"]{object-fit:contain;object-position:center;background:#20211f}
+
+/* The portrait is the foreground subject; typography may overlap the silhouette,
+   never the eyes or face. */
+.hero{isolation:isolate}
+.hero h1{z-index:0}
+.hero-stage{overflow:visible}
+.hero-portrait{isolation:isolate}
+@media(min-width:1001px){
+  .hero-portrait{z-index:8;left:66%;top:-285px;width:min(67vw,920px)}
+  .hero-copy{z-index:9}
+  .hero-side,.hero-bottom{z-index:10}
+}
+@media(min-width:1500px){.hero-portrait{left:65%;top:-335px;width:1020px}}
+@media(max-width:1000px){
+  .hero h1{position:relative;z-index:1}
+  .hero-portrait{position:relative;z-index:4;margin-top:-60px}
+}
+@media(max-width:680px){
+  .lbnl-header-image{height:auto;aspect-ratio:4/5}
+  .lbnl-header-image img{object-position:70% 55%}
+  .hero-portrait{margin-top:-15px}
+  .photo-grid img{aspect-ratio:4/5}
+}
