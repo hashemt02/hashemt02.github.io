@@ -124,14 +124,20 @@ dialog{max-height:94vh}
   .radar-chapter{margin-top:30px}
 }
 
-/* Precision signal cursor: desktop/pointer devices only. */
+/* Circuit-symbol cursor: a diode becomes an illuminated LED over controls. */
 @media (hover:hover) and (pointer:fine) and (prefers-reduced-motion:no-preference){
   html,.text-link,.button,a,button,[data-project],summary{cursor:none}
-  .signal-cursor{position:fixed;left:0;top:0;width:30px;height:38px;pointer-events:none;z-index:10000;transform:translate3d(-60px,-60px,0);background:#fff;clip-path:polygon(0 0,0 80%,20% 63%,36% 100%,51% 92%,36% 57%,70% 57%);filter:drop-shadow(0 0 2px #07101c) drop-shadow(0 0 9px #45a8ff);transition:filter .16s ease,opacity .16s ease}
-  .signal-cursor:before,.signal-cursor:after{display:none}
-  .signal-cursor span{position:absolute;inset:3px;background:#111820;clip-path:inherit}
-  .signal-cursor.is-active{filter:drop-shadow(0 0 2px #07101c) drop-shadow(0 0 13px #45a8ff) drop-shadow(0 0 18px #45a8ff)}
-  .signal-cursor.is-down{filter:drop-shadow(0 0 1px #07101c) drop-shadow(0 0 5px #45a8ff)}
+  .signal-cursor{position:fixed;left:0;top:0;width:62px;height:42px;pointer-events:none;z-index:10000;transform:translate3d(-80px,-80px,0);opacity:1;filter:drop-shadow(0 1px 1px #07101ccc) drop-shadow(0 0 5px #45a8ff88);transition:filter .16s ease,opacity .16s ease}
+  .signal-cursor svg{display:block;width:100%;height:100%;overflow:visible}
+  .diode-wire,.diode-bar,.led-rays path{fill:none;stroke:#fffdf5;stroke-width:3;stroke-linecap:round;stroke-linejoin:round;paint-order:stroke;filter:drop-shadow(0 0 1px #07101c)}
+  .diode-body{fill:#111820;stroke:#fffdf5;stroke-width:3;stroke-linejoin:round;paint-order:stroke;filter:drop-shadow(0 0 1px #07101c)}
+  .led-rays{opacity:0;transform:translate(-2px,2px);transition:opacity .14s ease,transform .14s ease}
+  .signal-cursor.is-active{filter:drop-shadow(0 1px 1px #421006) drop-shadow(0 0 8px #ff5a36) drop-shadow(0 0 16px #ff5a36aa)}
+  .signal-cursor.is-active .diode-body{fill:#ff5a36;stroke:#fff8e7}
+  .signal-cursor.is-active .diode-wire,.signal-cursor.is-active .diode-bar,.signal-cursor.is-active .led-rays path{stroke:#fff8e7}
+  .signal-cursor.is-active .led-rays{opacity:1;transform:translate(0,0)}
+  .signal-cursor.is-down{filter:drop-shadow(0 0 2px #421006) drop-shadow(0 0 6px #ff5a36)}
+  .signal-cursor.is-down svg{transform:scale(.92);transform-origin:2px 23px}
   .signal-cursor.is-hidden{opacity:0}
 }
 @media (hover:none),(pointer:coarse),(prefers-reduced-motion:reduce){.signal-cursor{display:none}}
