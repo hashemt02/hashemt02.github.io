@@ -67,8 +67,9 @@
 .eyebrow{margin-bottom:15px}
 .experience-overview{padding-block:48px 38px}
 .chapter-links a{min-height:122px;padding-block:20px;gap:10px}
-.lbnl-header-image{height:auto;aspect-ratio:1.39;margin-bottom:30px}
+.lbnl-header-image{width:60%;height:auto;aspect-ratio:1.39;margin:0 auto 30px}
 .lbnl-header-image img{object-position:center bottom}
+.lbnl-header-image figcaption{font-size:11px;line-height:1.4;letter-spacing:.04em;bottom:20px}
 .experience-role{margin-bottom:26px}
 .feature-photo{min-height:410px}
 .feature-copy{padding:34px 38px}
@@ -108,8 +109,9 @@ dialog{max-height:94vh}
   .section-head{margin-bottom:24px}
   .experience-overview{padding-block:42px 18px}
   .chapter-links a,.chapter-links a:nth-child(odd){padding:16px 0}
-  .lbnl-header-image{height:auto;aspect-ratio:3/4;margin-bottom:24px}
+  .lbnl-header-image{width:100%;height:auto;aspect-ratio:3/4;margin-bottom:24px}
   .lbnl-header-image img{object-fit:contain;object-position:center;background:#deddd5}
+  .lbnl-header-image figcaption{font-size:9px;gap:18px}
   .feature-photo{min-height:300px}
   .feature-copy{padding:25px 22px}
   .startup{padding-block:48px}
