@@ -127,16 +127,65 @@ dialog{max-height:94vh}
 /* Precision signal cursor: desktop/pointer devices only. */
 @media (hover:hover) and (pointer:fine) and (prefers-reduced-motion:no-preference){
   html,.text-link,.button,a,button,[data-project],summary{cursor:none}
-  .signal-cursor{position:fixed;left:0;top:0;width:34px;height:34px;border:1px solid #d44422;border-radius:50%;pointer-events:none;z-index:10000;transform:translate3d(-60px,-60px,0);transition:width .18s ease,height .18s ease,border-color .18s ease,background .18s ease;mix-blend-mode:difference}
-  .signal-cursor:before,.signal-cursor:after{content:'';position:absolute;background:#fff;left:50%;top:50%;transform:translate(-50%,-50%)}
-  .signal-cursor:before{width:13px;height:1px}
-  .signal-cursor:after{width:1px;height:13px}
-  .signal-cursor span{position:absolute;width:4px;height:4px;left:50%;top:50%;transform:translate(-50%,-50%);border-radius:50%;background:#d44422;box-shadow:0 0 12px #d44422}
-  .signal-cursor.is-active{width:52px;height:52px;border-color:#fff;background:#ffffff12}
-  .signal-cursor.is-down{width:24px;height:24px}
+  .signal-cursor{position:fixed;left:0;top:0;width:30px;height:38px;pointer-events:none;z-index:10000;transform:translate3d(-60px,-60px,0);background:#fff;clip-path:polygon(0 0,0 80%,20% 63%,36% 100%,51% 92%,36% 57%,70% 57%);filter:drop-shadow(0 0 2px #07101c) drop-shadow(0 0 9px #45a8ff);transition:filter .16s ease,opacity .16s ease}
+  .signal-cursor:before,.signal-cursor:after{display:none}
+  .signal-cursor span{position:absolute;inset:3px;background:#111820;clip-path:inherit}
+  .signal-cursor.is-active{filter:drop-shadow(0 0 2px #07101c) drop-shadow(0 0 13px #45a8ff) drop-shadow(0 0 18px #45a8ff)}
+  .signal-cursor.is-down{filter:drop-shadow(0 0 1px #07101c) drop-shadow(0 0 5px #45a8ff)}
   .signal-cursor.is-hidden{opacity:0}
 }
 @media (hover:none),(pointer:coarse),(prefers-reduced-motion:reduce){.signal-cursor{display:none}}
+
+/* Institutional chapters use their official palettes; personal work shifts into
+   a tactile electronics-bench language without changing the project copy. */
+.institution-lockup{display:flex;align-items:center;gap:18px;margin:0 0 22px}
+.institution-lockup img{display:block;object-fit:contain;object-position:left center;flex:0 0 auto}
+.institution-lockup span{font:8px/1.5 var(--mono);letter-spacing:.12em;text-transform:uppercase}
+
+.chapter-lbnl{--chapter-accent:#007681;background:#00313c;color:#fff;border-top-color:#007681}
+.chapter-lbnl .lbnl-lockup img{width:230px;height:auto}
+.chapter-lbnl .lbnl-lockup span,.chapter-lbnl .section-head>p,.chapter-lbnl .timeline p,.chapter-lbnl .date,.chapter-lbnl .fine,.chapter-lbnl .photo-grid figcaption span{color:#b1b3b3}
+.chapter-lbnl .section-head,.chapter-lbnl .timeline article,.chapter-lbnl .coursework{border-color:#ffffff2b}
+.chapter-lbnl .timeline .role,.chapter-lbnl .photo-grid figcaption{color:#fff}
+.chapter-lbnl .eyebrow,.chapter-lbnl .text-link{color:#43c6c9}
+.chapter-lbnl .featured{background:#061f25;border:1px solid #ffffff24}
+.chapter-lbnl .tags span{border-color:#ffffff35;color:#d7e5e5}
+.chapter-lbnl .photo-grid a{background:#061f25;border:1px solid #ffffff20}
+.chapter-lbnl .photo-grid img{filter:saturate(.9) contrast(1.03)}
+
+.chapter-berkeley{--chapter-accent:#fdb515;background:#002676;color:#fff;border-top-color:#fdb515}
+.chapter-berkeley .berkeley-lockup{align-items:center}
+.chapter-berkeley .berkeley-lockup img{width:225px;height:78px;border:1px solid #ffffff28}
+.chapter-berkeley .berkeley-lockup span,.chapter-berkeley .section-head>p,.chapter-berkeley .timeline p,.chapter-berkeley .coursework p{color:#d8e2f1}
+.chapter-berkeley .section-head,.chapter-berkeley .timeline article,.chapter-berkeley .coursework{border-color:#ffffff32}
+.chapter-berkeley .timeline .role,.chapter-berkeley .course-grid h4{color:#fff}
+.chapter-berkeley .eyebrow,.chapter-berkeley .date{color:#fdb515}
+.chapter-berkeley .course-grid article{background:#092f7b;border:1px solid #ffffff26;padding:20px}
+.chapter-berkeley .chapter-subsection{background:#071c49;border-top-color:#fdb515}
+.chapter-berkeley .chapter-subsection .eyebrow,.chapter-berkeley .chapter-subsection .text-link{color:#fdb515}
+.chapter-berkeley .chapter-subsection .visual{background:#e8edf5;border:6px solid #fdb515}
+
+.chapter-personal{--chapter-accent:#c7552e;background-color:#eee2c8;color:#241f19;border-top-color:#c7552e;background-image:linear-gradient(#ad825b1d 1px,transparent 1px),linear-gradient(90deg,#ad825b1d 1px,transparent 1px);background-size:28px 28px}
+.chapter-personal:after{content:'R&D BENCH  /  REV. 01';position:absolute;right:4%;bottom:28px;padding:7px 10px;border:1px dashed #724c31;color:#724c31;background:#f4ead5;font:8px var(--mono);letter-spacing:.12em;transform:rotate(-1deg)}
+.chapter-personal .section-head{padding-bottom:24px;border-bottom:2px dashed #9b7657}
+.chapter-personal .section-head>p,.chapter-personal .project>p:not(.eyebrow){color:#5f5143}
+.chapter-personal .project{position:relative;background:#f7edd8;border:1px solid #a98968;padding:15px 15px 24px;box-shadow:8px 8px 0 #6e4d3220}
+.chapter-personal .project:nth-child(1){transform:rotate(-.35deg)}
+.chapter-personal .project:nth-child(2){transform:rotate(.35deg)}
+.chapter-personal .visual{border:1px solid #76553a;background-color:#2b2925}
+.chapter-personal .project:before{content:'';position:absolute;width:78px;height:20px;left:50%;top:-10px;transform:translateX(-50%) rotate(-2deg);background:#d5b56f99;border:1px solid #876c4280;z-index:3}
+.chapter-personal .eyebrow,.chapter-personal .text-link{color:#a83d20}
+.chapter-personal .tags span{background:#efe0c3;border-color:#a98968;color:#5f3f2a}
+.chapter-personal .fusion{background-color:#242521;background-image:linear-gradient(#f0c66f14 1px,transparent 1px),linear-gradient(90deg,#f0c66f14 1px,transparent 1px);background-size:24px 24px;color:#ffb64d}
+.chapter-personal .orb,.chapter-personal .orb:before,.chapter-personal .orb:after{border-color:#ffb64d}
+
+@media(max-width:680px){
+  .institution-lockup{align-items:flex-start;flex-direction:column;gap:10px;margin-bottom:17px}
+  .chapter-lbnl .lbnl-lockup img{width:190px}
+  .chapter-berkeley .berkeley-lockup img{width:190px;height:68px}
+  .chapter-personal .project:nth-child(1),.chapter-personal .project:nth-child(2){transform:none}
+  .chapter-personal:after{display:none}
+}
 
 .bytes-event{display:flex;justify-content:center}
 .bytes-event video{display:block;width:min(100%,430px);height:560px;object-fit:contain;object-position:center;border-radius:22px;background:#141414}
@@ -204,3 +253,8 @@ dialog{max-height:94vh}
   .hero-networking>img{object-position:50% 76%;-webkit-mask-image:linear-gradient(to bottom,transparent 0,#000 12%,#000 88%,transparent 100%);mask-image:linear-gradient(to bottom,transparent 0,#000 12%,#000 88%,transparent 100%)}
   .personal-project-grid{gap:50px}
 }
+
+/* Final chapter surfaces intentionally override the earlier generic chapter map. */
+.chapter-lbnl{--chapter-accent:#007681;background:#00313c;color:#fff;border-top-color:#007681}
+.chapter-berkeley{--chapter-accent:#fdb515;background:#002676;color:#fff;border-top-color:#fdb515}
+.chapter-personal{--chapter-accent:#c7552e;background-color:#eee2c8;color:#241f19;border-top-color:#c7552e;background-image:linear-gradient(#ad825b1d 1px,transparent 1px),linear-gradient(90deg,#ad825b1d 1px,transparent 1px);background-size:28px 28px}
