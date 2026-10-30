@@ -17,8 +17,8 @@
 @media(max-width:680px){.hero-portrait{height:440px;margin:-45px 0 0}.hero-stage{gap:10px}.hero-copy{padding-top:15px}}
 
 /* Subject-aware image composition: preserve faces, hardware, and document edges. */
-.lbnl-header-image{height:clamp(540px,55vw,760px);background:#d9d8d1}
-.lbnl-header-image img{object-position:72% 58%}
+.lbnl-header-image{height:clamp(560px,48vw,720px);background:#20211f}
+.lbnl-header-image img{object-position:center 77%}
 .photo-grid img{height:auto;aspect-ratio:4/5;object-fit:cover}
 .photo-grid figure:nth-child(1) img{object-position:center 76%}
 .photo-grid figure:nth-child(2) img{object-position:42% 58%}
@@ -54,13 +54,28 @@
 }
 @media(max-width:680px){
   .lbnl-header-image{height:auto;aspect-ratio:4/5}
-  .lbnl-header-image img{object-position:70% 55%}
+  .lbnl-header-image img{object-position:center 73%}
   .hero-portrait{margin-top:-15px}
   .photo-grid img{aspect-ratio:4/5}
 }
 
-.bytes-event video{display:block;width:100%;height:320px;object-fit:cover;object-position:center 73%;border-radius:22px;background:#141414}
-@media(max-width:680px){.bytes-event video{height:360px}}
+/* Precision signal cursor: desktop/pointer devices only. */
+@media (hover:hover) and (pointer:fine) and (prefers-reduced-motion:no-preference){
+  html,.text-link,.button,a,button,[data-project],summary{cursor:none}
+  .signal-cursor{position:fixed;left:0;top:0;width:34px;height:34px;border:1px solid #d44422;border-radius:50%;pointer-events:none;z-index:10000;transform:translate3d(-60px,-60px,0);transition:width .18s ease,height .18s ease,border-color .18s ease,background .18s ease;mix-blend-mode:difference}
+  .signal-cursor:before,.signal-cursor:after{content:'';position:absolute;background:#fff;left:50%;top:50%;transform:translate(-50%,-50%)}
+  .signal-cursor:before{width:13px;height:1px}
+  .signal-cursor:after{width:1px;height:13px}
+  .signal-cursor span{position:absolute;width:4px;height:4px;left:50%;top:50%;transform:translate(-50%,-50%);border-radius:50%;background:#d44422;box-shadow:0 0 12px #d44422}
+  .signal-cursor.is-active{width:52px;height:52px;border-color:#fff;background:#ffffff12}
+  .signal-cursor.is-down{width:24px;height:24px}
+  .signal-cursor.is-hidden{opacity:0}
+}
+@media (hover:none),(pointer:coarse),(prefers-reduced-motion:reduce){.signal-cursor{display:none}}
+
+.bytes-event{display:flex;justify-content:center}
+.bytes-event video{display:block;width:min(100%,430px);height:560px;object-fit:contain;object-position:center;border-radius:22px;background:#141414}
+@media(max-width:680px){.bytes-event video{width:100%;height:auto;aspect-ratio:9/16}}
 
 /* Portfolio chapters: visibly separate research, startup, academic, and personal work. */
 .chapter-links{grid-template-columns:repeat(5,minmax(0,1fr))}
