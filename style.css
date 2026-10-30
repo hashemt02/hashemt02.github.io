@@ -18,7 +18,7 @@
 
 /* Subject-aware image composition: preserve faces, hardware, and document edges. */
 .lbnl-header-image{height:clamp(560px,48vw,720px);background:#20211f}
-.lbnl-header-image img{object-position:center 77%}
+.lbnl-header-image img{object-position:center 96%}
 .photo-grid img{height:auto;aspect-ratio:4/5;object-fit:cover}
 .photo-grid figure:nth-child(1) img{object-position:center 76%}
 .photo-grid figure:nth-child(2) img{object-position:42% 58%}
@@ -54,9 +54,70 @@
 }
 @media(max-width:680px){
   .lbnl-header-image{height:auto;aspect-ratio:4/5}
-  .lbnl-header-image img{object-position:center 73%}
+  .lbnl-header-image img{object-position:center 92%}
   .hero-portrait{margin-top:-15px}
   .photo-grid img{aspect-ratio:4/5}
+}
+
+/* Compact editorial rhythm: retain clear chapter boundaries while reducing
+   scroll fatigue and oversized empty space. */
+.section{padding-block:68px}
+.section-head{margin-bottom:32px}
+.section-head h2{font-size:clamp(36px,4.4vw,64px)}
+.eyebrow{margin-bottom:15px}
+.experience-overview{padding-block:48px 38px}
+.chapter-links a{min-height:122px;padding-block:20px;gap:10px}
+.lbnl-header-image{height:clamp(440px,38vw,570px);margin-bottom:30px}
+.experience-role{margin-bottom:26px}
+.feature-photo{min-height:410px}
+.feature-copy{padding:34px 38px}
+.feature-copy>p:not(.eyebrow){margin:17px 0}
+.metrics{padding:18px 0;margin-top:18px}
+.experience-gallery{padding-top:24px}
+.photo-grid{gap:18px}
+.startup{padding-block:64px;gap:7%}
+.bytes-wordmark{margin-bottom:18px}
+.bytes-event{margin-top:24px}
+.bytes-event video{height:460px}
+.stat-grid{gap:24px 18px}
+.chapter-bytes .stat-grid>div{padding:20px}
+.coursework{margin-top:45px;padding-top:30px}
+.chapter-subsection{margin-top:62px;margin-bottom:-68px;padding-block:62px}
+.single-project .visual{height:340px}
+.project-grid{gap:28px}
+.about-photo{min-height:460px}
+.resources a{padding:19px 0;font-size:21px}
+.contact{padding-top:58px}
+.contact h2{font-size:clamp(50px,7.5vw,118px)}
+.contact>div{margin-top:45px}
+dialog{max-height:94vh}
+.detail-header{padding:34px 42px 24px}
+.detail-header h2{font-size:38px}
+.detail-section{padding:30px 42px 38px}
+.detail-section>h2{margin-bottom:18px}
+.detail-section h3{margin:26px 0 12px}
+.detail-figure{margin:22px 0}
+.radar-case-map{margin:22px 0 38px}
+.radar-chapter{padding-top:26px;margin-top:38px}
+.code-evidence-grid img{height:350px}
+.code-evidence-grid .detail-figure:first-child img{height:740px}
+
+@media(max-width:680px){
+  .section{padding-block:46px}
+  .section-head{margin-bottom:24px}
+  .experience-overview{padding-block:42px 18px}
+  .chapter-links a,.chapter-links a:nth-child(odd){padding:16px 0}
+  .lbnl-header-image{height:auto;margin-bottom:24px}
+  .feature-photo{min-height:300px}
+  .feature-copy{padding:25px 22px}
+  .startup{padding-block:48px}
+  .bytes-event video{height:auto}
+  .chapter-subsection{margin-top:44px;margin-bottom:-46px;padding-block:46px}
+  .about-photo{min-height:360px}
+  .contact{padding-top:46px}
+  .detail-header{padding:30px 22px 20px}
+  .detail-section{padding:25px 22px 32px}
+  .radar-chapter{margin-top:30px}
 }
 
 /* Precision signal cursor: desktop/pointer devices only. */
