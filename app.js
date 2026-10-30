@@ -112,7 +112,7 @@ const signalCursor=document.querySelector('.signal-cursor');
 if(signalCursor&&matchMedia('(hover:hover) and (pointer:fine) and (prefers-reduced-motion:no-preference)').matches){
  const interactive='a,button,[data-project],summary,input,textarea,select,video';
  let cursorX=-60,cursorY=-60,frame;
- const drawCursor=()=>{signalCursor.style.transform=`translate3d(${cursorX-17}px,${cursorY-17}px,0)`;frame=null};
+ const drawCursor=()=>{signalCursor.style.transform=`translate3d(${cursorX-4}px,${cursorY-3}px,0)`;frame=null};
  document.addEventListener('pointermove',event=>{cursorX=event.clientX;cursorY=event.clientY;signalCursor.classList.remove('is-hidden');if(!frame)frame=requestAnimationFrame(drawCursor)});
  document.addEventListener('pointerover',event=>signalCursor.classList.toggle('is-active',Boolean(event.target.closest(interactive))));
  document.addEventListener('pointerdown',()=>signalCursor.classList.add('is-down'));
