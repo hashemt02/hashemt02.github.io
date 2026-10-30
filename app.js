@@ -85,3 +85,16 @@ if ('IntersectionObserver' in window && !matchMedia('(prefers-reduced-motion: re
  const observer=new IntersectionObserver(entries=>entries.forEach(entry=>{if(entry.isIntersecting){entry.target.classList.add('reveal');observer.unobserve(entry.target)}}),{threshold:.08});
  document.querySelectorAll('.section-head,.photo-grid,.project-grid').forEach(el=>observer.observe(el));
 }
+
+const bytesEventVideo=document.querySelector('.bytes-event video');
+if(bytesEventVideo){
+ bytesEventVideo.muted=true;
+ const startBytesVideo=()=>bytesEventVideo.play().catch(()=>{});
+ startBytesVideo();
+ document.addEventListener('visibilitychange',()=>{if(!document.hidden)startBytesVideo()});
+ if('IntersectionObserver' in window){
+  new IntersectionObserver(entries=>entries.forEach(entry=>{
+   if(entry.isIntersecting)startBytesVideo();
+  }),{threshold:.12}).observe(bytesEventVideo);
+ }
+}
