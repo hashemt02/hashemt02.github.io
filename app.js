@@ -112,9 +112,10 @@ const signalCursor=document.querySelector('.signal-cursor');
 if(signalCursor&&matchMedia('(hover:hover) and (pointer:fine) and (prefers-reduced-motion:no-preference)').matches){
  const interactive='a,button,[data-project],summary,input,textarea,select,video';
  let cursorX=-60,cursorY=-60,frame;
- const drawCursor=()=>{signalCursor.style.transform=`translate3d(${cursorX-10}px,${cursorY+7}px,0)`;frame=null};
- document.addEventListener('pointermove',event=>{cursorX=event.clientX;cursorY=event.clientY;signalCursor.classList.remove('is-hidden');if(!frame)frame=requestAnimationFrame(drawCursor)});
- document.addEventListener('pointerover',event=>signalCursor.classList.toggle('is-active',Boolean(event.target.closest(interactive))));
+ const setCursorState=target=>signalCursor.classList.toggle('is-active',Boolean(target&&target.closest(interactive)));
+ const drawCursor=()=>{signalCursor.style.transform=`translate3d(${cursorX-13}px,${cursorY}px,0)`;frame=null};
+ document.addEventListener('pointermove',event=>{cursorX=event.clientX;cursorY=event.clientY;signalCursor.classList.remove('is-hidden');setCursorState(document.elementFromPoint(cursorX,cursorY));if(!frame)frame=requestAnimationFrame(drawCursor)});
+ document.addEventListener('pointerover',event=>setCursorState(event.target));
  document.addEventListener('pointerdown',()=>signalCursor.classList.add('is-down'));
  document.addEventListener('pointerup',()=>signalCursor.classList.remove('is-down'));
  document.addEventListener('pointerleave',()=>signalCursor.classList.add('is-hidden'));
