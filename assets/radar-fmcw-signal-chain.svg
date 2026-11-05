@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="510" viewBox="0 0 1200 510" role="img" aria-labelledby="title desc">
+  <title id="title">FMCW radar transmitter and receiver signal chain</title>
+  <desc id="desc">A ramp waveform generator drives the local oscillator. Its signal feeds the power amplifier and transmit antenna, and a reference feeds the mixer. The receive antenna feeds the low-noise amplifier, then the mixer, intermediate-frequency stage, ADC, and digital signal processor.</desc>
+  <defs>
+    <marker id="arrow" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto"><path d="M1 1L7 4.5L1 8" fill="none" stroke="#477aa0" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></marker>
+    <marker id="label-arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0 0L8 4L0 8Z" fill="#616767"/></marker>
+  </defs>
+  <rect width="1200" height="510" rx="12" fill="#fff"/>
+  <rect x="140" y="58" width="1000" height="177" rx="27" fill="#f6f8fa" stroke="#b13b30" stroke-width="3" stroke-dasharray="12 9"/>
+  <g fill="#e6edf1" stroke="#477aa0" stroke-width="3.5" stroke-linejoin="round">
+    <path d="M318 90L318 211L189 151Z"/>
+    <rect x="507" y="95" width="175" height="110" rx="20"/>
+    <rect x="929" y="95" width="175" height="110" rx="20"/>
+    <path d="M278 271L278 407L416 339Z"/>
+    <circle cx="491" cy="339" r="35"/>
+    <rect x="604" y="284" width="120" height="110" rx="18"/>
+    <rect x="799" y="284" width="120" height="110" rx="18"/>
+    <rect x="994" y="284" width="120" height="110" rx="18"/>
+  </g>
+  <g fill="none" stroke="#477aa0" stroke-width="4" stroke-linejoin="round" marker-end="url(#arrow)">
+    <path d="M507 151H322"/>
+    <path d="M189 151H155"/>
+    <path d="M929 151H686"/>
+    <path d="M491 151V300"/>
+    <path d="M155 276V339H273"/>
+    <path d="M416 339H451"/>
+    <path d="M526 339H599"/>
+    <path d="M724 339H794"/>
+    <path d="M919 339H989"/>
+  </g>
+  <g fill="none" stroke="#477aa0" stroke-width="3" stroke-linecap="round">
+    <path d="M155 151V111M155 111L132 86M155 111L178 86"/>
+    <path d="M155 276L132 251M155 276L178 251"/>
+  </g>
+  <g font-family="Arial, Helvetica, sans-serif" font-size="25" font-weight="600" text-anchor="middle" fill="#183a4b">
+    <text x="279" y="160">PA</text>
+    <text x="594" y="160">LO Gen.</text>
+    <text x="1016" y="132"><tspan x="1016">Ramp</tspan><tspan x="1016" dy="29">waveform</tspan><tspan x="1016" dy="29">gen.</tspan></text>
+    <text x="320" y="348">LNA</text>
+    <text x="491" y="348" font-weight="400">×</text>
+    <text x="664" y="348">IF</text>
+    <text x="859" y="348">ADC</text>
+    <text x="1054" y="348">DSP</text>
+  </g>
+  <text x="409" y="128" fill="#183a4b" font-family="Georgia, serif" font-size="25" font-style="italic" text-anchor="middle">cos(φ<tspan baseline-shift="sub" font-size="17">T</tspan>(t))</text>
+  <g font-family="Arial, Helvetica, sans-serif" font-size="28" fill="#b13b30"><text x="28" y="53">TX signal</text><text x="28" y="253">RX signal</text></g>
+  <path d="M475 442L487 387" fill="none" stroke="#616767" stroke-width="2.5" marker-end="url(#label-arrow)"/>
+  <text x="474" y="480" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="28" fill="#616767">Mixer</text>
+</svg>

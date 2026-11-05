@@ -264,3 +264,416 @@ dialog{max-height:94vh}
 .chapter-lbnl{--chapter-accent:#007681;background:#00313c;color:#fff;border-top-color:#007681}
 .chapter-berkeley{--chapter-accent:#fdb515;background:#002676;color:#fff;border-top-color:#fdb515}
 .chapter-personal{--chapter-accent:#c7552e;background-color:#eee2c8;color:#241f19;border-top-color:#c7552e;background-image:linear-gradient(#ad825b1d 1px,transparent 1px),linear-gradient(90deg,#ad825b1d 1px,transparent 1px);background-size:28px 28px}
+
+/* Berkeley course projects retain a full-width feature row for each project. */
+.berkeley-projects{grid-template-columns:minmax(0,1fr);gap:60px}
+.berkeley-projects .project{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,.75fr);column-gap:42px;align-items:start}
+.berkeley-projects .project+.project{border-top:1px solid #ffffff32;padding-top:48px}
+.berkeley-projects .visual{grid-row:1/7;height:420px;min-width:0}
+.berkeley-projects .project>p,.berkeley-projects .project>h3,.berkeley-projects .tags{min-width:0}
+.chapter-berkeley .berkeley-projects .oscilloscope-preview{
+ padding:clamp(18px,2.2vw,36px);
+ border:1px solid #b7c9e52b;
+ border-radius:12px;
+ background-color:#071c49;
+ background-image:linear-gradient(#d7e6ff05 1px,transparent 1px),linear-gradient(90deg,#d7e6ff05 1px,transparent 1px),radial-gradient(ellipse at 50% 50%,#111 20%,#10151f 58%,#071c49 100%);
+ background-size:32px 32px,32px 32px,100% 100%;
+ box-shadow:inset 0 1px 0 #ffffff08,0 18px 48px #00000018;
+}
+.oscilloscope-preview img{display:block;width:100%;height:100%;object-fit:contain}
+.oscilloscope-diagram{
+ background:radial-gradient(ellipse at 50% 42%,#111 25%,#10151f 65%,#071c49);
+ border:1px solid #b7c9e52b;border-radius:12px;padding:24px;
+}
+.oscilloscope-diagram img{background:transparent;height:auto;max-height:none}
+.oscilloscope-diagram figcaption{color:#d8d8d2}
+@media(max-width:1000px){
+ .berkeley-projects .project{display:block}
+ .berkeley-projects .visual{height:360px;margin-bottom:28px}
+}
+@media(max-width:680px){
+ .berkeley-projects{gap:40px}
+ .berkeley-projects .project+.project{padding-top:32px}
+ .berkeley-projects .visual{height:280px}
+ .chapter-berkeley .berkeley-projects .oscilloscope-preview{height:auto;aspect-ratio:2/1;padding:16px;border-radius:8px}
+ .oscilloscope-diagram{padding:10px}
+}
+
+/* Selected source schematics: full sheets with readable, uncropped previews. */
+.scope-schematic{margin-top:44px;padding-top:30px;border-top:1px solid var(--line)}
+.scope-schematic>.eyebrow{color:var(--accent);margin-bottom:10px}
+.detail-section .scope-schematic h3{margin:0 0 15px}
+.schematic-sheet img{height:auto;max-height:none;object-fit:contain;background:#fff;border:1px solid var(--line);border-radius:6px}
+.schematic-sheet>a{display:block}
+.schematic-sheet figcaption{display:flex;justify-content:space-between;align-items:baseline;gap:12px;flex-wrap:wrap}
+.schematic-sheet .text-link{font-size:11px;color:var(--accent)}
+@media(max-width:680px){.scope-schematic{margin-top:32px;padding-top:24px}}
+
+/* Course-by-course academic record. */
+.coursework-catalog{grid-template-columns:minmax(220px,.7fr) minmax(0,1.6fr);gap:60px;align-items:start}
+.coursework-intro{max-width:310px}
+.coursework-intro h3{font-size:clamp(28px,3vw,40px);line-height:1.08;margin-bottom:20px}
+.course-table-wrap{min-width:0;overflow:hidden;border:1px solid #ffffff2b;border-radius:10px;background:#ffffff04}
+.course-table{border-collapse:collapse;width:100%;text-align:left;line-height:1.5}
+.course-table thead{background:#ffffff07}
+.course-table thead th{padding:15px 22px;font:500 10px/1.5 var(--mono);letter-spacing:.08em;text-transform:uppercase;color:#fdb515}
+.course-table tbody tr{border-top:1px solid #ffffff20;transition:background .18s}
+.course-table tbody tr:hover{background:#ffffff05}
+.course-table tbody th{padding:18px 22px;font-size:14px;font-weight:500;vertical-align:middle;width:54%}
+.course-table td{padding:18px 22px;font-size:12px;vertical-align:middle}
+.course-name{color:#fff}
+a.course-name{display:inline-flex;align-items:baseline;gap:12px;text-decoration:underline;text-decoration-color:#fdb51580;text-underline-offset:4px}
+a.course-name span{color:#fdb515;font-size:14px}
+a.course-name:hover{color:#fdb515;text-decoration-color:currentColor}
+.course-code{display:inline-block;margin-right:10px;color:#fdb515;font:500 11px/1.6 var(--mono);white-space:nowrap}
+.course-institution,.course-community{color:#d8e2f1}
+@media(max-width:1000px){
+ .coursework-catalog{grid-template-columns:1fr;gap:26px}
+ .coursework-intro{max-width:540px}
+ .coursework-intro h3 br{display:none}
+}
+@media(max-width:680px){
+ .course-table thead th{padding:12px 16px}
+ .course-table tbody th,.course-table td{padding:15px 16px}
+ .course-table tbody th{width:52%;font-size:13px}
+ .course-table td{font-size:11px}
+ .course-code{display:block;margin:0 0 3px}
+}
+@media(max-width:420px){
+ .course-table thead{position:absolute;width:1px;height:1px;padding:0;overflow:hidden;clip-path:inset(50%)}
+ .course-table,.course-table tbody,.course-table tbody tr,.course-table tbody th,.course-table td{display:block;width:100%}
+ .course-table tbody th{padding:16px 16px 5px}
+ .course-table td{padding:0 16px 16px}
+ .course-code{display:inline-block;margin:0 10px 0 0}
+}
+
+/* Keep the acquisition code in view, cropping the terminal below the editor. */
+.code-evidence-grid .detail-figure:first-child{grid-row:auto}
+.radar-code-crop{width:100%;aspect-ratio:1350/1530;overflow:hidden;background:#20211f}
+.code-evidence-grid .detail-figure .radar-code-crop img{display:block;width:100%;height:auto;max-height:none;object-fit:contain;object-position:center top}
+
+.cory-hall-photo img{height:auto;max-height:none;object-fit:contain;border-radius:6px}
+
+.radar-chapter .relay-demo video{display:block;width:min(100%,420px);height:auto;max-height:650px;object-fit:contain;margin-inline:auto;background:#20211f}
+
+.radar-power-figure img{height:auto;max-height:none;object-fit:contain;border-radius:6px}
+
+/* Compact assembly photo paired with a smaller portrait work clip. */
+.radar-integration-pair{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,.52fr);gap:24px;align-items:start;max-width:620px;margin:28px auto}
+.radar-integration-pair .detail-figure{margin:0;min-width:0}
+.radar-integration-pair .integration-photo img{display:block;width:100%;height:auto;max-height:none;object-fit:contain;border-radius:6px}
+.radar-chapter .radar-integration-pair video{display:block;width:100%;height:auto;max-height:none;aspect-ratio:9/16;object-fit:contain;background:#20211f;border-radius:6px}
+.radar-integration-pair .detail-video figcaption{flex-direction:column;align-items:flex-start;gap:8px}
+@media(max-width:480px){
+ .radar-integration-pair{grid-template-columns:1fr;gap:24px;max-width:360px}
+ .radar-integration-pair .integration-video{width:180px;max-width:100%;justify-self:center}
+}
+
+/* A compact controlled-target experiment inside the radar case study. */
+.reflector-experiment{margin-top:34px;padding:24px;border:1px solid var(--line);border-radius:8px;background:#e8e7df}
+.reflector-experiment>.eyebrow{margin-bottom:10px;color:var(--accent)}
+.reflector-experiment h4{font:600 25px/1.15 var(--display);letter-spacing:-.035em;margin:0 0 18px}
+.reflector-animation-group{text-align:center;margin:24px 0}
+.reflector-animations{display:grid;grid-template-columns:repeat(2,minmax(0,200px));justify-content:center;align-items:start;gap:22px;text-align:left}
+.reflector-animations .detail-figure{margin:0 0 12px;min-width:0}
+.reflector-animations img{display:block;width:100%;height:auto;max-height:none;aspect-ratio:319/568;object-fit:contain;border-radius:6px;background:#20211f}
+.reflector-rcs{padding-top:20px;border-top:1px solid var(--line)}
+.reflector-rcs h5{font:600 17px/1.3 var(--display);margin:0 0 12px}
+.reflector-rcs .reflector-equation{font:500 16px/1.7 var(--mono);color:var(--ink);padding:12px 15px;background:#f4f3ee;border-radius:4px;overflow-wrap:anywhere}
+@media(max-width:680px){.reflector-experiment{padding:18px}.reflector-experiment h4{font-size:22px}.reflector-animations{gap:12px}.reflector-rcs .reflector-equation{font-size:13px;padding:10px}}
+
+/* Shared image cap: half the previous full-width 4:3 project photo. */
+#dialog-content{--detail-image-max-width:480px;--detail-image-max-height:360px}
+#dialog-content .detail-section img{
+ display:block;
+ width:auto;
+ height:auto;
+ max-width:min(100%,var(--detail-image-max-width));
+ max-height:var(--detail-image-max-height);
+ aspect-ratio:auto;
+ object-fit:contain;
+ margin-inline:auto;
+}
+#dialog-content .detail-figure:not(.detail-video){max-width:var(--detail-image-max-width);margin-inline:auto}
+/* APE DeCal schematics: 140% of the shared figure-size limits. */
+#dialog-content .scope-schematic .schematic-sheet{
+ --detail-image-max-width:672px;
+ --detail-image-max-height:504px;
+ width:100%;
+}
+/* Bound the visible crop while retaining the Python terminal crop. */
+#dialog-content .radar-code-crop{max-width:317.647px;margin-inline:auto}
+#dialog-content .detail-section .radar-code-crop img{width:100%;max-width:100%;max-height:none;margin:0}
+.radar-cfar-crop{width:100%;aspect-ratio:1048/746;overflow:hidden;background:#20211f}
+#dialog-content .detail-section .radar-cfar-crop img{display:block;width:100%;height:auto;max-width:100%;max-height:none;margin:0;object-position:center top}
+.radar-cfar-analysis{margin-top:30px;padding-top:26px;border-top:1px solid var(--line);scroll-margin-top:80px}
+.radar-cfar-analysis>.eyebrow{margin-bottom:10px;color:var(--accent)}
+.radar-cfar-analysis h4{font:600 25px/1.15 var(--display);letter-spacing:-.035em;margin:0 0 18px}
+.radar-cfar-pair{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px;margin:24px auto;max-width:900px}
+#dialog-content .radar-cfar-pair .detail-figure{width:100%;min-width:0;max-width:440px;margin:0 auto}
+.radar-cfar-pair .detail-figure>a{display:block;padding:6px;background:white;border:1px solid var(--line);border-radius:5px}
+#dialog-content .radar-cfar-pair img{width:100%;height:auto;max-width:100%;max-height:200px;background:white;border:0;border-radius:0}
+.radar-cfar-pair figcaption{display:block;font-size:11px;line-height:1.6}
+.radar-cfar-pair figcaption a{white-space:nowrap;color:var(--accent)}
+#dialog-content .radar-cfar-code{margin:24px auto}
+@media(max-width:680px){.radar-cfar-pair{grid-template-columns:minmax(0,1fr);gap:20px}.radar-cfar-analysis h4{font-size:22px}}
+
+/* Compact theory figures, with full-resolution originals one click away. */
+#radar-front-end>h3{font-size:26px}
+.radar-theory-gallery{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px 20px;max-width:740px;margin:18px auto 10px}
+#dialog-content .radar-theory-gallery .detail-figure{width:100%;max-width:360px;min-width:0;margin:0 auto}
+#dialog-content .radar-theory-gallery .radar-theory-chain{grid-column:1/-1;max-width:380px}
+.theory-image-link{display:block;padding:9px;background:#fff;border:1px solid var(--line);border-radius:6px;transition:border-color .15s ease}
+.theory-image-link:hover,.theory-image-link:focus-visible{border-color:var(--accent)}
+#dialog-content .radar-theory-gallery img{width:100%;height:auto;max-width:100%;max-height:200px;border:0;border-radius:0;background:#fff}
+.theory-image-link span{display:block;margin-top:7px;text-align:right;font:10px/1.4 var(--mono);color:#53616a}
+.radar-theory-gallery figcaption{display:block;margin-top:9px;font-size:11px;line-height:1.55}
+#dialog-content .radar-theory-credit{max-width:740px;margin:14px auto 0;font-size:11px}
+@media(max-width:600px){
+ .radar-theory-gallery{grid-template-columns:minmax(0,1fr);gap:16px}
+ #dialog-content .radar-theory-gallery .detail-figure{max-width:320px}
+ #dialog-content .radar-theory-gallery .radar-theory-chain{max-width:340px}
+}
+
+/* Keep the main explanation beside media, with its caption directly below. */
+.portrait-description-row{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,240px);align-items:start;gap:26px;max-width:860px;margin:24px auto}
+.portrait-description-row .figure-description-copy{min-width:0}
+#dialog-content .portrait-description-row .figure-description-copy p{font:14px/1.8 'DM Sans',Arial,sans-serif;color:var(--muted);margin:0 0 14px}
+#dialog-content .portrait-description-row .figure-description-copy p:last-child{margin-bottom:0}
+#dialog-content .detail-section .portrait-description-row .detail-figure{display:block;width:fit-content;max-width:100%;min-width:0;margin:0;justify-self:start}
+#dialog-content .portrait-description-row .detail-figure>a{display:block;width:fit-content;max-width:100%}
+#dialog-content .detail-section .portrait-description-row img,
+#dialog-content .detail-section .portrait-description-row video{display:block;width:auto;height:auto;max-width:100%;max-height:300px;aspect-ratio:auto;object-fit:contain;margin:0;border-radius:6px}
+#dialog-content .portrait-description-row figcaption{display:block;max-width:240px;font-size:11px;line-height:1.55;margin:9px 0 0;padding:0;border:0;text-align:left}
+.portrait-description-row figcaption .text-link{display:block;margin-top:8px}
+@media(max-width:680px){
+ .portrait-description-row{grid-template-columns:minmax(0,1fr);gap:17px;max-width:480px;margin:22px auto}
+ #dialog-content .detail-section .portrait-description-row .detail-figure{justify-self:center;max-width:260px}
+ #dialog-content .portrait-description-row figcaption{max-width:260px}
+}
+.bytes-story-row{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,180px);gap:24px;align-items:center;margin-top:24px}
+.bytes-story-row .bytes-story-copy{grid-column:1;grid-row:1;min-width:0}
+.bytes-story-row .bytes-event{grid-column:2;grid-row:1;margin:0}
+.bytes-story-row .bytes-event video{display:block;width:100%;height:auto;max-height:360px;object-fit:contain;border-radius:12px}
+.bytes-story-copy .role{font-size:13px}
+.bytes-story-copy>p{font-size:14px;line-height:1.8;color:#b7bbb0}
+@media(max-width:680px){
+ .bytes-story-row{grid-template-columns:minmax(0,1fr);gap:20px}
+ .bytes-story-row .bytes-story-copy{grid-column:1;grid-row:1}
+ .bytes-story-row .bytes-event{grid-column:1;grid-row:2;width:200px;max-width:100%;justify-self:center}
+}
+
+/* Let the main-page media row respond to its own column width. */
+.chapter-bytes>div:first-child{container-type:inline-size}
+@container(max-width:480px){
+ .bytes-story-row{grid-template-columns:minmax(0,1fr);gap:20px}
+ .bytes-story-row .bytes-story-copy{grid-column:1;grid-row:1}
+ .bytes-story-row .bytes-event{grid-column:1;grid-row:2;width:200px;max-width:100%;justify-self:center}
+}
+
+/* APE DeCal: explanations on the left, enlarged schematics on the right. */
+.scope-schematic.schematic-description-row{display:grid;grid-template-columns:minmax(220px,1fr) minmax(0,2.4fr);gap:28px;align-items:center}
+.schematic-description{min-width:0}
+.schematic-description>.eyebrow{color:var(--accent);margin-bottom:10px}
+.detail-section .schematic-description h3{font-size:26px}
+.schematic-description>p:last-child{margin-bottom:0}
+#dialog-content .schematic-description-row .schematic-sheet{margin:0 auto;min-width:0}
+@media(max-width:900px){
+ .scope-schematic.schematic-description-row{grid-template-columns:minmax(0,1fr);gap:20px}
+ .detail-section .schematic-description h3{font-size:25px}
+}
+
+/* One compact Courses chapter for coursework and class projects. */
+.chapter-links{grid-template-columns:repeat(4,minmax(0,1fr))}
+.coursework-catalog{gap:32px}
+.course-table thead th{padding:10px 16px;font-size:9px}
+.course-table tbody th{padding:11px 16px;font-size:13px}
+.course-table td{padding:11px 16px;font-size:11px}
+.course-table .course-code{font-size:10px}
+.chapter-subsection.course-project-block{margin:36px 0 0;padding:28px 0 0;border-top:1px solid #ffffff32;background:transparent;color:inherit}
+.course-project-block>h3{font-size:27px;margin:0 0 24px}
+.course-project-block>.eyebrow{color:#fdb515;margin-bottom:10px}
+.berkeley-projects{grid-template-columns:repeat(2,minmax(0,1fr));gap:20px}
+.berkeley-projects .project,.berkeley-projects .project+.project{display:block;padding:16px;border:1px solid #ffffff28;border-radius:10px;background:#ffffff04}
+.chapter-berkeley .berkeley-projects .visual{height:180px;grid-row:auto;aspect-ratio:auto;margin:0 0 16px}
+.berkeley-projects .project>h3{font-size:23px;margin-bottom:10px}
+.berkeley-projects .project>p:not(.eyebrow){font-size:13px;line-height:1.7}
+.berkeley-projects .project>.eyebrow{font-size:9px;margin-bottom:12px}
+.berkeley-projects .tags{margin:12px 0;font-size:9px}
+.berkeley-projects .text-link{font-size:12px}
+/* A slightly larger Bytes portrait clip beside its introduction. */
+.bytes-story-row{grid-template-columns:minmax(0,1fr) minmax(0,250px)}
+.bytes-story-row .bytes-event video{max-height:480px}
+.bytes-explainer{margin:26px 0 34px}
+.bytes-explainer-images{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:22px;margin-top:24px}
+#dialog-content .bytes-explainer-images .detail-figure{width:100%;margin:0;min-width:0}
+#dialog-content .bytes-explainer-images img{width:100%;height:auto;max-width:100%;max-height:360px}
+.bytes-explainer-images figcaption{font-size:12px}
+.casis-event-photo img{border-radius:6px}
+@media(max-width:1000px){.chapter-links{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:680px){
+ .chapter-links{grid-template-columns:minmax(0,1fr)}
+ .course-table thead th{padding:9px 12px}
+ .course-table tbody th,.course-table td{padding:10px 12px}
+ .course-table tbody th{font-size:12px}
+ .berkeley-projects{grid-template-columns:minmax(0,1fr);gap:20px}
+ .chapter-berkeley .berkeley-projects .visual{height:160px}
+ .bytes-story-row{grid-template-columns:minmax(0,1fr)}
+ .bytes-story-row .bytes-event{width:250px}
+ .bytes-explainer-images{grid-template-columns:minmax(0,1fr)}
+}
+@media(max-width:420px){
+ .course-table tbody th{padding:11px 12px 3px}
+ .course-table td{padding:0 12px 11px}
+}
+@container(max-width:480px){
+ .bytes-story-row{grid-template-columns:minmax(0,1fr)}
+ .bytes-story-row .bytes-event{width:250px}
+}
+
+/* Lead with the person, with organizations providing context for the work. */
+#hero-title{position:relative;z-index:7;font-size:clamp(72px,10vw,152px);line-height:.96;letter-spacing:-.065em;max-width:700px}
+.hero-kicker{font-size:clamp(20px,2vw,26px)}
+.bytes-wordmark img{width:clamp(140px,14vw,210px)}
+@media(max-width:680px){
+ #hero-title{font-size:clamp(64px,15vw,100px);max-width:100%}
+ .hero-kicker{font-size:21px}
+}
+
+/* Clear project entry points, with a short overview before supporting photos. */
+.project-cta{display:inline-flex;align-items:center;justify-content:space-between;gap:22px;min-height:48px;padding:13px 20px;border:1px solid var(--chapter-accent,var(--accent));border-radius:6px;background:var(--chapter-accent,var(--accent));color:#fff;font:600 13px/1.4 'DM Sans',Arial,sans-serif;text-align:left;transition:filter .15s ease,transform .15s ease}
+.project-cta:hover{filter:brightness(1.12);transform:translateY(-1px)}
+.project-cta:focus-visible{outline:3px solid currentColor;outline-offset:4px}
+.chapter-lbnl .project-cta:focus-visible,.chapter-bytes .project-cta:focus-visible,.chapter-berkeley .project-cta:focus-visible{outline-color:#fff}
+.chapter-lbnl .project-cta{background:#43c6c9;border-color:#43c6c9;color:#06262d}
+.chapter-bytes .project-cta{color:#111}
+.chapter-berkeley .project-cta{color:#071c49}
+.project-cta span{font-size:19px;line-height:1}
+.company-links{align-items:center;flex-wrap:wrap;gap:18px}
+.chapter-lbnl .section-head{margin-bottom:24px}
+.lbnl-role-summary{margin-bottom:24px}
+.lbnl-role-summary article{padding:16px 0;align-items:center}
+.lbnl-role-summary h3{font-size:19px;letter-spacing:-.025em;margin-bottom:8px}
+.lbnl-role-summary .fine{margin:0}
+.lbnl-project-card{border-radius:10px}
+.lbnl-project-card .feature-photo{min-height:380px}
+.lbnl-project-card .feature-copy{padding:28px 30px}
+.lbnl-project-card .feature-copy h3{font-size:clamp(28px,2.6vw,38px);line-height:1.12;margin:0 0 10px}
+.lbnl-project-card .feature-copy>.eyebrow{margin-bottom:12px}
+.lbnl-project-card .feature-copy>p:not(.eyebrow){margin:14px 0}
+.lbnl-project-card .tags{margin:12px 0 16px}
+.project-details-entry{margin-top:8px}
+.project-details-entry p{font-size:11px;line-height:1.6;color:#b8d0d2;margin:9px 0 0;max-width:330px}
+.lbnl-project-card .metrics{margin-top:20px;padding:16px 0 0;gap:28px}
+.lbnl-project-card .metrics strong{font-size:30px}
+.chapter-lbnl .field-notes{padding-top:24px}
+#lbnl-hardware-title{font-size:20px;margin-bottom:16px;letter-spacing:-.025em}
+/* Column proportions follow the photos' native aspect ratios. */
+.chapter-lbnl .field-notes .photo-grid{grid-template-columns:minmax(0,.75fr) minmax(0,2.125fr) minmax(0,.684fr);gap:16px;max-width:1040px;margin-inline:auto;align-items:stretch}
+.chapter-lbnl .field-notes .photo-grid figure{display:flex;flex-direction:column;align-items:stretch;gap:0;padding:0;border:1px solid #ffffff20;border-radius:8px;background:#061f2566;min-width:0;overflow:hidden}
+.chapter-lbnl .field-notes .photo-grid a{display:block;width:100%;height:auto;aspect-ratio:auto;border:0;border-radius:0;min-width:0;background:transparent;line-height:0}
+.chapter-lbnl .field-notes .photo-grid img{display:block;width:100%;height:auto;max-width:100%;max-height:none;aspect-ratio:auto;object-fit:contain;object-position:center;filter:none;transform:none}
+.chapter-lbnl .field-notes .photo-grid a:hover img{transform:none}
+.chapter-lbnl .field-notes .photo-grid figcaption{font-size:12px;line-height:1.55;padding:12px 14px 14px;min-width:0}
+.chapter-lbnl .field-notes .photo-grid figcaption span{font-size:8px;margin-bottom:6px}
+.chapter-lbnl .lbnl-community-photo{width:min(100%,720px);height:auto;aspect-ratio:auto;margin:32px auto 0;background:transparent;overflow:visible}
+.chapter-lbnl .lbnl-community-photo img{width:100%;height:380px;object-fit:cover;object-position:center bottom;border-radius:8px}
+.chapter-lbnl .lbnl-community-photo:after{display:none}
+.chapter-lbnl .lbnl-community-photo figcaption{position:static;display:block;margin-top:10px;color:#b8d0d2;font:11px/1.6 'DM Sans',Arial,sans-serif;letter-spacing:0}
+@media(max-width:680px){
+ .lbnl-role-summary article{gap:8px}
+ .lbnl-role-summary h3{font-size:18px}
+ .lbnl-project-card .feature-photo{min-height:240px}
+ .lbnl-project-card .feature-copy{padding:24px 20px}
+ .project-details-entry .project-cta{width:100%}
+ .chapter-lbnl .field-notes .photo-grid{grid-template-columns:minmax(0,1fr);gap:14px;max-width:480px}
+ .chapter-lbnl .field-notes .photo-grid figure:not(.hardware-bench-photo){display:grid;grid-template-columns:minmax(0,140px) minmax(0,1fr);align-items:center}
+ .chapter-lbnl .field-notes .photo-grid figcaption{padding:10px 12px 12px;font-size:11px}
+ .chapter-lbnl .lbnl-community-photo img{height:290px}
+}
+
+/* Education and courses share a row instead of two tall sections. */
+.education-course-grid{display:grid;grid-template-columns:minmax(240px,.8fr) minmax(0,1.8fr);gap:40px;align-items:start;border-top:1px solid #ffffff32;padding-top:28px;margin-top:26px}
+.education-summary{max-width:350px}
+.education-summary .date{font-size:10px;margin-bottom:18px}
+.education-summary h3{font-size:27px;line-height:1.15;margin:0 0 14px}
+.education-summary .role{font-size:14px;color:#fff;margin-bottom:8px}
+.education-summary .education-gpa{font:500 12px/1.6 var(--mono);color:#fdb515;margin-bottom:16px}
+.education-summary>p:last-child{font-size:13px;color:#d8e2f1;line-height:1.8;margin-bottom:0}
+.education-courses{min-width:0}
+.education-courses>.eyebrow{margin-bottom:12px}
+.education-courses .course-table tbody th{width:55%}
+.education-courses .course-name{overflow-wrap:anywhere}
+@media(max-width:900px){
+ .education-course-grid{grid-template-columns:minmax(0,1fr);gap:26px}
+ .education-summary{max-width:540px}
+}
+
+/* Projects are grouped by the work itself; course context lives in the details. */
+.anchor-alias{position:absolute;top:0;left:0;scroll-margin-top:18px}
+.chapter-projects{--chapter-accent:#d44422;background:#f4f3ee;color:var(--ink)}
+.chapter-projects:after,.chapter-projects .project:before{display:none}
+.chapter-projects .section-head{border-bottom:1px solid var(--line);padding-bottom:24px}
+.chapter-projects .section-head>p,.chapter-projects .project>p:not(.eyebrow){color:var(--muted)}
+.chapter-projects .projects-grid{gap:26px}
+.chapter-projects .projects-grid .project{transform:none;box-shadow:none;background:#fff;border:1px solid var(--line);border-radius:10px;padding:16px;display:flex;flex-direction:column;align-items:flex-start}
+.chapter-projects .visual{width:100%;height:200px;border:1px solid var(--line);border-radius:6px;margin-bottom:0;background:#e8edf5}
+.chapter-projects .project h3{font-size:24px;margin-bottom:12px}
+.chapter-projects .project>p:not(.eyebrow){font-size:13px;line-height:1.7}
+.chapter-projects .project>.eyebrow{font-size:9px;margin:18px 0 12px;color:#a83d20}
+.chapter-projects .tags{margin:12px 0 18px;font-size:9px}
+.chapter-projects .tags span{background:#f4f3ee;border-color:var(--line);color:#555b55}
+.chapter-projects .project-cta{margin-top:auto}
+.chapter-projects .project-cta:focus-visible{outline-color:var(--ink)}
+.chapter-projects .oscilloscope-preview{padding:16px;background:radial-gradient(ellipse at center,#111 20%,#10151f 58%,#071c49 100%)}
+.chapter-projects .inverter-card img{object-fit:contain;background:#e8edf5}
+.chapter-projects .fusion{background-color:#242521}
+@media(max-width:680px){
+ .chapter-projects .projects-grid{gap:22px}
+ .chapter-projects .visual{height:180px}
+}
+
+/* A larger cube alongside its explanation, with a readable stacked mobile layout. */
+.radar-cube-layout{display:grid;grid-template-columns:minmax(0,1.28fr) minmax(0,1fr);gap:30px;align-items:center;margin:24px 0 18px}
+#dialog-content .radar-cube-layout .radar-cube-figure{width:100%;max-width:640px;margin:0;min-width:0}
+#dialog-content .radar-cube-layout img{width:100%;max-width:100%;height:auto;max-height:none;background:white;border:0;border-radius:12px}
+.radar-cube-figure .theory-image-link{padding:0 0 9px}
+.radar-cube-figure figcaption{font-size:11px;line-height:1.5;margin-top:9px}
+.radar-cube-copy{min-width:0}
+#dialog-content .radar-cube-copy h4{font-size:17px;line-height:1.3;margin:0 0 9px}
+#dialog-content .radar-cube-copy h4:not(:first-child){margin-top:20px}
+#dialog-content .radar-cube-copy p{font-size:13px;line-height:1.7;margin:0 0 12px}
+#dialog-content .radar-cube-copy .radar-cube-note{font-size:11px;line-height:1.55;margin-bottom:0}
+.radar-cube-pipeline{justify-content:center;gap:12px;padding:14px;margin:18px 0 0}
+@media(max-width:760px){.radar-cube-layout{grid-template-columns:minmax(0,1fr);gap:22px}.radar-cube-copy{max-width:640px}.radar-cube-pipeline{gap:6px}.radar-cube-pipeline span{font-size:9px;padding:7px}.radar-cube-pipeline i{transform:none}}
+
+/* Compact project context: motivation and challenge share one balanced row. */
+#radar-problem .radar-problem-intro{max-width:780px;margin:0 0 23px;font-size:15px;line-height:1.7}
+.radar-problem-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}
+.radar-problem-panel{padding:23px 25px;border:1px solid var(--line);border-radius:12px;background:#efeee7;min-width:0}
+.radar-platform-choice{background:#edf2ef;border-color:#ccd8d1}
+#radar-problem .radar-problem-panel h4{font:600 19px/1.3 var(--display);letter-spacing:-.025em;margin:0 0 12px;color:var(--ink)}
+#radar-problem .radar-problem-panel p{font-size:14px;line-height:1.75;margin:0}
+#radar-problem .radar-problem-panel b{font-weight:600;color:#254c43}
+.radar-project-focus{display:grid;grid-template-columns:170px minmax(0,1fr);gap:22px;align-items:start;border-left:3px solid var(--accent);padding:16px 20px;margin-top:22px;background:#d4442205}
+#radar-problem .radar-focus-label{font:10px/1.7 var(--mono);letter-spacing:.05em;color:var(--accent);margin:3px 0 0}
+#radar-problem .radar-project-focus>p:last-child{font-size:14px;line-height:1.7;color:var(--ink);margin:0}
+@media(max-width:680px){.radar-problem-grid{grid-template-columns:minmax(0,1fr);gap:12px}.radar-problem-panel{padding:19px 20px}.radar-project-focus{grid-template-columns:minmax(0,1fr);gap:7px;padding:15px 17px}#radar-problem .radar-problem-intro{font-size:14px}}
+
+
+/* Relay switching and supply regulation share one compact explanation and media row. */
+.radar-power-section{margin-top:32px}
+#dialog-content .radar-power-section>h3{font-size:26px;margin:0 0 20px}
+.radar-power-layout{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,390px);gap:28px;align-items:start;max-width:850px;margin:0 auto}
+#dialog-content .radar-power-copy p{font-size:14px;line-height:1.75;margin:0 0 14px}
+.radar-power-sequence{display:flex;align-items:center;flex-wrap:wrap;gap:7px;padding-top:14px;margin-top:18px;border-top:1px solid var(--line)}
+.radar-power-sequence span{font:9px/1.5 var(--mono);padding:5px 7px;background:#e9e7df;border-radius:3px}
+.radar-power-sequence i{font-style:normal;color:var(--accent)}
+.radar-power-media{display:grid;grid-template-columns:minmax(0,.56fr) minmax(0,1fr);gap:16px;align-items:start;min-width:0}
+#dialog-content .radar-power-media .detail-figure{width:100%;max-width:100%;min-width:0;margin:0}
+#dialog-content .radar-power-media .relay-demo video{display:block;width:100%;height:auto;max-height:none;aspect-ratio:9/16;object-fit:contain;margin:0;border-radius:6px}
+#dialog-content .radar-power-media .radar-power-figure img{display:block;width:100%;height:auto;max-width:100%;max-height:none;aspect-ratio:2361/2333;object-fit:contain;margin:0;border-radius:6px}
+.radar-power-media .radar-power-figure>a{display:block}
+#dialog-content .radar-power-media figcaption{display:flex;flex-direction:column;align-items:flex-start;gap:7px;font-size:11px;line-height:1.5;margin:9px 0 0}
+.radar-power-media .text-link{font-size:11px}
+@media(max-width:760px){.radar-power-layout{grid-template-columns:minmax(0,1fr);gap:20px}.radar-power-media{width:100%;max-width:390px;margin:0 auto}#dialog-content .radar-power-section>h3{font-size:24px}}

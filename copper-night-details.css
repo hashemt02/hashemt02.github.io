@@ -1,0 +1,113 @@
+/* Copper Night / project reader. A raised charcoal document, finer dot grid,
+   and copper section markers distinguish this layer from the homepage board. */
+body[data-theme="copper-night-v2"] #project-dialog{
+ --bg:#15242b;--ink:#e8f0ee;--muted:#b1c3c6;--line:#3a5159;
+ --accent:#e0a46c;--dark:#101c22;--reader-panel:#1b3038;
+ --reader-nav:#101e25;--reader-mint:#78d6ba;
+ background:var(--bg);color:var(--ink);border:1px solid #50666c;
+ border-top:3px solid var(--accent);border-radius:12px;
+ box-shadow:0 24px 90px #0008;scrollbar-color:#506971 var(--reader-nav);
+ color-scheme:dark;isolation:isolate;
+}
+body[data-theme="copper-night-v2"] #project-dialog::backdrop{background:#050c11d9;backdrop-filter:blur(6px)}
+#project-dialog .detail-header{
+ position:relative;padding:34px 54px 28px 42px;
+ background-color:var(--dark);
+ background-image:radial-gradient(#9aaead26 .7px,transparent .9px);
+ background-size:20px 20px;
+ border-bottom:1px solid var(--line);
+}
+#project-dialog .detail-header:after{
+ content:'';position:absolute;right:20px;bottom:18px;width:30px;height:30px;
+ border-right:1px solid #e0a46c60;border-bottom:1px solid #e0a46c60;
+ border-radius:0 0 3px 0;pointer-events:none;
+}
+#project-dialog .detail-header .eyebrow{color:var(--accent);max-width:90%;font-size:9px;line-height:1.8;margin-bottom:16px}
+#project-dialog .detail-header h2{color:var(--ink);line-height:1.1;margin:0;max-width:850px}
+#project-dialog>.close{
+ display:grid;place-items:center;width:32px;height:32px;top:12px;right:12px;
+ color:var(--muted);background:var(--reader-nav);border:1px solid var(--line);
+ border-radius:5px;font-size:24px;line-height:1;
+}
+#project-dialog>.close:hover{color:var(--accent);border-color:var(--accent)}
+#project-dialog .detail-nav{background:var(--reader-nav);gap:10px;border-top:0;border-color:var(--line);padding:12px 42px}
+#project-dialog .detail-nav button{
+ display:inline-flex;align-items:center;justify-content:center;min-height:40px;
+ color:var(--ink);background:#1b2e36;border-color:var(--line);border-radius:5px;
+ font-size:11px;padding:10px 15px;line-height:1.4;
+}
+#project-dialog .detail-nav [data-jump]:before{content:'';width:4px;height:4px;border:1px solid var(--accent);border-radius:50%;margin-right:9px;flex-shrink:0}
+#project-dialog .detail-nav button:hover{background:#263d45;border-color:var(--accent);color:var(--accent)}
+#project-dialog .detail-nav [data-dismiss]{background:transparent;color:var(--muted)}
+#project-dialog .detail-section{background:var(--bg)}
+#project-dialog .detail-section>.eyebrow{color:var(--accent);margin-bottom:14px}
+#project-dialog .detail-section p.eyebrow{color:var(--accent)}
+#project-dialog .detail-section h2,#project-dialog .detail-section h3,#project-dialog .detail-section h4,#project-dialog .detail-section h5{color:var(--ink)}
+#project-dialog .detail-section p,#project-dialog .detail-figure figcaption{color:var(--muted)}
+#project-dialog .detail-section .detail-lead{color:var(--ink)}
+#project-dialog .detail-experience{background:#1a2c33;border-color:var(--line)}
+#project-dialog .detail-section a:not(.button):hover{color:#f0bd8b}
+#project-dialog a.text-link,#project-dialog button.text-link,#project-dialog .reference-line a{color:var(--accent)}
+#project-dialog .button{
+ color:#152026;background:var(--accent);border-color:var(--accent);
+ border-radius:4px;min-height:44px;align-items:center;
+}
+#project-dialog .button:hover{color:#152026;background:#f0bd8b;border-color:#f0bd8b}
+#project-dialog :focus-visible{outline:2px solid var(--reader-mint);outline-offset:4px}
+#project-dialog ::selection{color:#152026;background:var(--accent)}
+#project-dialog .detail-skills{gap:14px;border:0;padding:0}
+#project-dialog .detail-skills>div{background:var(--reader-panel);border:1px solid var(--line);border-radius:6px;padding:18px}
+#project-dialog .detail-skills h4{margin:0 0 9px}
+#project-dialog .detail-skills p{margin:0}
+#project-dialog .radar-case-map{background:var(--reader-panel);border-radius:7px;overflow:hidden}
+#project-dialog .radar-case-map a:hover{background:#263d45}
+#project-dialog .radar-case-map a:hover strong{color:var(--accent)}
+#project-dialog .radar-chapter{border-color:var(--line)}
+#project-dialog .radar-chapter>.chapter-number{
+ display:flex;align-items:center;gap:10px;line-height:1.65;color:var(--accent);
+}
+#project-dialog .radar-chapter>.chapter-number:before{content:'';width:6px;height:6px;border:1px solid var(--accent);border-radius:50%;flex-shrink:0}
+#project-dialog .radar-problem-panel{background:var(--reader-panel);border-color:var(--line)}
+#project-dialog .radar-platform-choice{background:#193531;border-color:#3b6256}
+body[data-theme="copper-night-v2"] #project-dialog .radar-problem-panel b{color:#92d5be}
+#project-dialog .radar-project-focus,#project-dialog .engineering-note{background:#e0a46c09;border-color:var(--accent)}
+#project-dialog .radar-power-sequence span{color:var(--ink);background:#20353d;border:1px solid var(--line)}
+#project-dialog .pipeline-diagram{background:var(--dark);border-color:var(--line);border-radius:6px}
+#project-dialog .pipeline-diagram span{color:var(--ink);background:var(--reader-panel);border-color:var(--line);border-radius:3px}
+#project-dialog .reflector-experiment{background:var(--reader-panel);border-color:var(--line)}
+#project-dialog .reflector-equation{color:var(--ink);background:var(--dark);border:1px solid var(--line)}
+#project-dialog .result-pair{border-color:var(--line);background:var(--line);border-radius:6px;overflow:hidden}
+#project-dialog .result-pair>div,#project-dialog .equation-stack>div{background:var(--reader-panel)}
+#project-dialog .equation-callout span{color:var(--accent)}
+#project-dialog .equation-callout small{color:var(--muted)}
+#project-dialog .reference-line{line-height:1.7}
+/* Photos keep their source colors. White scientific sheets remain a distinct,
+   light reading surface; only their surrounding captions use the dark theme. */
+#project-dialog .detail-figure img{background:var(--dark)}
+#project-dialog .detail-figure img[src*="cpu-"],
+#project-dialog .schematic-sheet img,
+#project-dialog .schematic-feature img{background:#f4f5f2;color-scheme:light}
+#project-dialog .theory-image-link,
+#project-dialog .radar-cfar-pair .detail-figure>a{background:#fff;border-color:#91a0a5;color-scheme:light}
+#project-dialog .theory-image-link span{color:#53616a}
+#project-dialog .theory-image-link:hover span{color:#203f49}
+#project-dialog .theory-image-link img,
+#project-dialog .radar-cfar-pair img{background:#fff;color-scheme:light}
+#project-dialog .theory-image-link:hover,
+#project-dialog .radar-cfar-pair .detail-figure>a:hover{border-color:var(--accent)}
+#project-dialog .detail-figure figcaption code{color:#dce9e9;background:#243c44;border:1px solid var(--line);padding:1px 4px;border-radius:3px;font-size:.95em}
+@media(max-width:680px){
+ body[data-theme="copper-night-v2"] #project-dialog{border-radius:9px;max-height:94dvh}
+ #project-dialog .detail-header{padding:28px 42px 24px 22px}
+ #project-dialog .detail-header .eyebrow{font-size:8px;max-width:100%}
+ #project-dialog .detail-header h2{font-size:29px}
+ #project-dialog .detail-nav{padding:10px 14px;gap:7px;flex-wrap:wrap}
+ #project-dialog .detail-nav button{font-size:10px;min-height:40px;padding:9px 10px}
+ #project-dialog .detail-nav [data-jump]:before{display:none}
+ #project-dialog .detail-nav [data-dismiss]{padding-inline:9px}
+ #project-dialog .detail-skills>div{padding:16px}
+}
+@media(max-width:360px){
+ #project-dialog .detail-nav{gap:5px;padding-inline:10px}
+ #project-dialog .detail-nav button{font-size:9px;padding-inline:7px}
+}
