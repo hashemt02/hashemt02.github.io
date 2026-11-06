@@ -1,0 +1,34 @@
+/* Responsive fit corrections shared by the homepage and project reader. */
+/* Percentage row gaps in an auto-height grid are not included in its intrinsic
+   height. Fixed row spacing keeps the Bytes cards above the next chapter. */
+#bytes{grid-template-columns:repeat(2,minmax(0,1fr));column-gap:7%;row-gap:32px;align-items:start}
+#bytes>div,#bytes .stat-grid>div{min-width:0}
+#bytes .stat-grid{grid-template-columns:repeat(2,minmax(0,1fr));min-width:0;max-width:100%;height:auto}
+#bytes .stat-grid p{margin-bottom:0}
+/* Break long technical headings rather than widening a phone-sized dialog. */
+#project-dialog :is(h2,h3,h4,h5,figcaption){overflow-wrap:anywhere}
+#project-dialog video{max-width:100%;object-fit:contain}
+@media(max-width:680px){
+ #bytes{grid-template-columns:minmax(0,1fr);row-gap:28px}
+ #bytes .stat-grid{gap:16px;align-content:start}
+ #bytes .stat-grid>div{padding:20px 16px;border-radius:14px}
+ #bytes .stat-grid strong{font-size:clamp(30px,9.5vw,52px);white-space:nowrap}
+ #bytes .stat-grid p{font-size:12px;line-height:1.65;max-width:none;margin-top:14px}
+ .chapter-lbnl .field-notes .photo-grid figure:not(.hardware-bench-photo){grid-template-columns:minmax(0,.8fr) minmax(0,1fr)}
+ .chapter-lbnl .field-notes .photo-grid figcaption{overflow-wrap:anywhere}
+ #project-dialog .detail-section :is(.scope-schematic,.radar-cube-layout,.radar-integration-pair,.radar-power-layout,.radar-power-media,.detail-photo-pair,.code-evidence-grid){min-width:0;max-width:100%}
+}
+@media(max-width:360px){
+ #bytes .stat-grid{gap:12px}
+ #bytes .stat-grid>div{padding:18px 14px}
+ #bytes .bytes-wordmark{flex-wrap:wrap;gap:10px}
+ #project-dialog .detail-nav{padding-inline:10px}
+}
+/* In a short landscape viewport, show the complete figure above its caption.
+   Existing editor/notebook crops retain their intentionally cropped frames. */
+@media(orientation:landscape) and (max-height:600px){
+ #project-dialog #dialog-content .detail-section :is(img,video):not(.radar-code-crop img,.radar-cfar-crop img){
+  width:auto;height:auto;max-width:100%;max-height:max(100px,calc(100dvh - 180px));
+  aspect-ratio:auto;object-fit:contain;margin-inline:auto;
+ }
+}
