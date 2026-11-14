@@ -6,10 +6,10 @@
 <meta content="width=device-width,initial-scale=1" name="viewport"/>
 <meta content="Hashem Taleb’s student portfolio: UC Berkeley EECS, radar research at Berkeley Lab, CPU and hardware projects, and software experience at Bytes." name="description"/>
 <title>Hashem Taleb — EECS Portfolio</title>
-<link href="style.css?v=20261104-gallery-sequence" rel="stylesheet"/>
-<link href="copper-night.css?v=20261104-v2" rel="stylesheet"/>
-<link href="copper-night-details.css?v=20261105-v1" rel="stylesheet"/>
-<link href="responsive.css?v=20261105-fit" rel="stylesheet"/>
+<link href="style.css?v=20261114-published" rel="stylesheet"/>
+<link href="copper-night.css?v=20261114-published" rel="stylesheet"/>
+<link href="copper-night-details.css?v=20261114-published" rel="stylesheet"/>
+<link href="responsive.css?v=20261114-published" rel="stylesheet"/>
 <meta content="#0B1418" name="theme-color"/>
 <meta content="Hashem Taleb — EECS Portfolio" property="og:title"/>
 <meta content="UC Berkeley EECS. Atmospheric radar research, embedded electronics, digital design, and software." property="og:description"/>
@@ -50,22 +50,30 @@
 </div>
 <div class="hero-stage">
 <div class="hero-copy">
-<h1 id="hero-title">Hashem<br/><span>Taleb</span></h1>
-<p class="hero-kicker">EECS student at UC Berkeley</p>
-<p class="intro">I work on electronics, embedded software, and radar research. Here you’ll find my projects and experience at Berkeley Lab, Bytes, and UC Berkeley.</p>
+<h1 id="hero-title">Hashem Taleb</h1>
+<p class="hero-kicker">Electrical Engineering &amp; Computer Sciences</p>
+<div class="hero-metadata">
+<p>UC Berkeley</p>
+<p>Undergraduate Research Assistant · Lawrence Berkeley National Laboratory</p>
+</div>
+<button aria-controls="project-dialog" aria-haspopup="dialog" class="hero-recent-project" data-project="oscilloscope" type="button">
+<span class="hero-recent-copy">
+<span class="hero-recent-label">RECENTLY DESIGNED</span>
+<strong>A 2-channel mixed-signal oscilloscope.</strong>
+<span class="hero-recent-description">My latest PCB design, featuring FPGA-based acquisition and custom mixed-signal circuitry.</span>
+<span class="hero-recent-link">Explore the PCB in 3D <span aria-hidden="true">↗</span></span>
+</span>
+<img alt="Scopii oscilloscope PCB design preview" height="862" src="assets/oscilloscope-pcb-clean.png" width="1832"/>
+</button>
+<p class="intro">I work on electronics, embedded software, and radar research. Here you’ll find my projects and experience at Berkeley Lab, UC Berkeley, Bytes, and more.</p>
 <div class="actions">
-<a class="button" href="#experience">View my work <svg class="pcb-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="4" cy="12" r="1.5"/><path d="M6 12h14m-6-6 6 6-6 6"/></svg>
+<a class="button" href="#experience">View my work <svg aria-hidden="true" class="pcb-icon" focusable="false" viewbox="0 0 24 24"><circle cx="4" cy="12" r="1.5"></circle><path d="M6 12h14m-6-6 6 6-6 6"></path></svg>
 </a>
 <a class="text-link" href="assets/resume.pdf" rel="noopener" target="_blank">View resume ↗</a>
 </div>
-<div class="hero-foot">
-<span>RESEARCH / BERKELEY LAB<br/>
-<strong>Undergraduate research at Berkeley Lab.</strong>
-</span>
-</div>
 </div>
 <figure class="hero-image hero-networking">
-<div class="hero-tech-grid" aria-hidden="true"></div>
+<div aria-hidden="true" class="hero-tech-grid"></div>
 <img alt="Hashem Taleb speaking with founders at a Bytes networking event" fetchpriority="high" src="assets/bytes-networking.jpg"/>
 <figcaption>
 <span>01 / HASHEM TALEB</span>
@@ -77,7 +85,6 @@
 <div aria-hidden="true" class="hero-side">HARDWARE ↔ SOFTWARE ↔ REAL WORLD</div>
 </div>
 <div class="hero-bottom">
-<span>EMBEDDED SYSTEMS / RF / DIGITAL DESIGN</span>
 <a href="#work">SCROLL TO EXPLORE ↓</a>
 </div>
 </section>
@@ -90,32 +97,36 @@
 <p>My research, startup experience, and engineering projects, with details on my contributions and the work behind them.</p>
 </div>
 <nav aria-label="Explore portfolio chapters" class="experience-links chapter-links">
+
+
+
+
 <a href="#lbnl">
 <span>01 / RESEARCH</span>
 <strong>LBNL Radar</strong>
 <small>Atmospheric sensing</small>
 <b>↓</b>
-</a>
-<a href="#bytes">
-<span>02 / STARTUP</span>
-<strong>Bytes</strong>
-<small>Software · Operations</small>
+</a><a href="#projects">
+<span>02 / ENGINEERING</span>
+<strong>Projects</strong>
+<small>PCB · RISC-V · Inverter</small>
 <b>↓</b>
-</a>
-<a href="#berkeley">
+</a><a href="#berkeley">
 <span>03 / EDUCATION</span>
 <strong>Courses</strong>
 <small>UC Berkeley EECS</small>
 <b>↓</b>
-</a>
-<a href="#projects">
-<span>04 / ENGINEERING</span>
-<strong>Projects</strong>
-<small>CPU · Oscilloscope · Inverter · IEC</small>
+</a><a href="#bytes">
+<span>04 / STARTUP</span>
+<strong>Bytes</strong>
+<small>Restaurant Technology Startup</small>
 <b>↓</b>
-</a>
-</nav>
+</a></nav>
 </section>
+
+
+
+
 <section class="section experience-section chapter chapter-lbnl" id="work">
 <span id="lbnl">
 </span>
@@ -127,7 +138,6 @@
 </div>
 <p>I work on embedded control, signal processing, and hardware integration for atmospheric radar research.</p>
 </div>
-
 <div class="timeline experience-role lbnl-role-summary">
 <article>
 <div class="date">JAN 2026 — PRESENT</div>
@@ -147,7 +157,7 @@
 <h3>Atmospheric mmWave radar</h3>
 <p>Adapting TI mmWave radar for atmospheric measurements. I work on the control software, signal-processing pipeline, and electronics needed for unattended field collection.</p>
 <div class="tags"><span>Embedded control</span><span>Radar DSP</span><span>Hardware integration</span></div>
-<div class="project-details-entry"><button class="project-cta" type="button" data-project="radar" aria-haspopup="dialog" aria-controls="project-dialog" aria-describedby="radar-details-hint">View full project <span aria-hidden="true">→</span></button><p id="radar-details-hint">Open the project to see hardware, code, testing, and results.</p></div>
+<div class="project-details-entry"><button aria-controls="project-dialog" aria-describedby="radar-details-hint" aria-haspopup="dialog" class="project-cta" data-project="radar" type="button">View full project <span aria-hidden="true">→</span></button><p id="radar-details-hint">Open the project to see hardware, code, testing, and results.</p></div>
 <div class="metrics">
 <div>
 <strong>~5.3 W</strong>
@@ -158,29 +168,28 @@
 <span>data collected per day¹</span>
 </div>
 </div>
-
 </div>
 </article>
-<section class="field-notes experience-gallery" aria-labelledby="lbnl-hardware-title">
+<section aria-labelledby="lbnl-hardware-title" class="field-notes experience-gallery">
 <h3 id="lbnl-hardware-title">Hardware snapshots</h3>
 <div class="photo-grid">
 <figure>
 <a href="assets/adafruit-raspi-stack-portrait.svg" rel="noopener" target="_blank">
-<img alt="Adafruit controller and peripherals stacked with a Raspberry Pi through a HAT" loading="lazy" src="assets/adafruit-raspi-stack-portrait.svg" width="1500" height="2000"/>
+<img alt="Adafruit controller and peripherals stacked with a Raspberry Pi through a HAT" height="2000" loading="lazy" src="assets/adafruit-raspi-stack-portrait.svg" width="1500"/>
 </a>
 <figcaption>
 <span>01 / EMBEDDED CONTROL</span>Adafruit controller and Raspberry Pi stack.</figcaption>
 </figure>
 <figure class="hardware-bench-photo">
 <a href="assets/controller-power-bench.svg" rel="noopener" target="_blank">
-<img alt="Controller and power assemblies on the bench beside an integrated radar enclosure" loading="lazy" src="assets/controller-power-bench.svg" width="2134" height="1004"/>
+<img alt="Controller and power assemblies on the bench beside an integrated radar enclosure" height="1004" loading="lazy" src="assets/controller-power-bench.svg" width="2134"/>
 </a>
 <figcaption>
 <span>02 / HARDWARE ASSEMBLY</span>Power hardware and assembly.</figcaption>
 </figure>
 <figure>
 <a href="assets/radar-integration-enclosure.jpg" rel="noopener" target="_blank">
-<img alt="Open radar enclosure with the reflector, radar board, controller, and power supplies integrated inside" loading="lazy" src="assets/radar-integration-enclosure.jpg" width="1642" height="2400"/>
+<img alt="Open radar enclosure with the reflector, radar board, controller, and power supplies integrated inside" height="2400" loading="lazy" src="assets/radar-integration-enclosure.jpg" width="1642"/>
 </a>
 <figcaption>
 <span>03 / INTEGRATION</span>Fully integrated radar control platform.</figcaption>
@@ -191,20 +200,94 @@
 <img alt="Berkeley Lab researchers and students visiting the Advanced Light Source" loading="lazy" src="assets/lbnl-als-visit.jpg"/>
 <figcaption>With fellow researchers and students at Berkeley Lab’s Advanced Light Source.</figcaption>
 </figure>
-</section>
-<section class="startup section experience-section chapter chapter-bytes" id="bytes">
+</section><section class="section additional-work chapter chapter-personal chapter-projects pcb-canvas" id="projects">
+<span aria-hidden="true" class="anchor-alias" id="personal-projects"></span><span aria-hidden="true" class="anchor-alias" id="course-projects"></span>
+<div class="section-head"><div><p class="eyebrow">02 / PROJECTS</p><h2>Projects</h2></div><p>Selected work in digital design, analog electronics, power electronics, and experimental physics.</p></div>
+<div class="project-grid personal-project-grid projects-grid">
+<article class="project">
+<div class="scopii-interactive scopii-card-viewer"><iframe allowfullscreen="" height="720" loading="lazy" src="https://personal-viewer.365.altium.com/client/index.html?feature=embed&amp;source=92155BB1-210F-4413-8E50-1EC63BB96544&amp;activeView=3D" title="Scopii interactive PCB and 3D viewer" width="1280"></iframe></div>
+<p class="eyebrow">PCB DESIGN &amp; FPGA ACQUISITION · IN PROGRESS</p>
+<h3>Building Scopii</h3>
+<p>Developing a PC-connected oscilloscope with a team at UC Berkeley. I own the path from ADC acquisition through FPGA processing and USB transfer to the planned waveform display.</p>
+<div class="tags"><span>PCB design</span><span>FPGA / ADC</span><span>FTDI / USB 3.0</span></div>
+<button aria-controls="project-dialog" aria-haspopup="dialog" class="project-cta" data-project="oscilloscope" type="button">View project details <svg aria-hidden="true" class="pcb-icon" focusable="false" viewbox="0 0 24 24"><circle cx="4" cy="12" r="1.5"></circle><path d="M6 12h14m-6-6 6 6-6 6"></path></svg></button>
+</article>
+<article class="project">
+<div class="cpu-preview visual">
+<img alt="Top-level RISC-V CPU datapath in Logisim-evolution" loading="lazy" src="assets/cpu-datapath.png"/>
+</div>
+<p class="eyebrow">COMPUTER ARCHITECTURE · IN PROGRESS</p>
+<h3>32-bit RISC-V CPU</h3>
+<p>Developing a 32-bit RISC-V processor in Logisim-evolution, from ALU and register-file design to CPU integration.</p>
+<div class="tags">
+<span>Logisim-evolution</span>
+<span>32-bit datapath</span>
+<span>RISC-V</span>
+</div>
+<button aria-controls="project-dialog" aria-haspopup="dialog" class="project-cta" data-project="cpu" type="button">View project details <svg aria-hidden="true" class="pcb-icon" focusable="false" viewbox="0 0 24 24"><circle cx="4" cy="12" r="1.5"></circle><path d="M6 12h14m-6-6 6 6-6 6"></path></svg></button>
+</article>
+</div>
+<div aria-labelledby="more-projects-title" class="more-projects">
+<h3 id="more-projects-title">More projects</h3>
+<div class="more-projects-grid">
+<button aria-controls="project-dialog" aria-haspopup="dialog" class="more-project-tab" data-project="inverter" type="button">
+<span><span class="eyebrow">POWER ELECTRONICS · 2025</span><strong>DC-to-AC inverter</strong></span><span aria-hidden="true" class="more-project-arrow">↗</span>
+</button>
+<button aria-controls="project-dialog" aria-haspopup="dialog" class="more-project-tab" data-project="fusion" type="button">
+<span><span class="eyebrow">EXPERIMENTAL PHYSICS · IN PROGRESS</span><strong>IEC plasma confinement</strong></span><span aria-hidden="true" class="more-project-arrow">↗</span>
+</button>
+</div>
+</div>
+</section><section class="section experience-section berkeley chapter chapter-berkeley" id="berkeley">
+<div class="section-head">
 <div>
-<p class="eyebrow">02 / BYTES · MAY 2021 — APR 2025</p>
-<div class="bytes-wordmark"><img src="https://trybytes.ai/images/brand/logo.png" alt="Bytes"/><small>RESTAURANT TECHNOLOGY</small></div>
+<div class="institution-lockup berkeley-lockup"><img alt="UC Berkeley" loading="lazy" src="https://brand.berkeley.edu/wp-content/uploads/2024/08/logo-variations-thumbnail-gold-blue-1.png"/><span>Electrical Engineering &amp; Computer Sciences</span></div>
+<p class="eyebrow">03 / COURSES</p>
+<h2>Courses</h2>
+</div>
+<p>My education and selected coursework in electrical engineering and computer science.</p>
+</div>
+<div class="education-course-grid" id="coursework">
+<div class="education-summary">
+<p class="date">EXPECTED MAY 2028</p>
+<h3>University of California, Berkeley</h3>
+<p class="role">B.S. Electrical Engineering &amp; Computer Sciences</p>
+<p class="education-gpa">GPA 4.0</p>
+<p>Building on community-college coursework in engineering, programming, and physics.</p>
+</div>
+<div class="education-courses">
+<p class="eyebrow">SELECTED COURSEWORK</p>
+<div class="course-table-wrap">
+<table aria-label="Courses and institutions" class="course-table">
+<thead><tr><th scope="col">Course</th><th scope="col">Institution</th></tr></thead>
+<tbody>
+<tr><th scope="row"><a class="course-name" href="https://cs61c.org/" rel="noopener" target="_blank">Computer Architecture<span aria-hidden="true">↗</span></a></th><td><span class="course-code">CS 61C</span><span class="course-institution">UC Berkeley</span></td></tr>
+<tr><th scope="row"><a class="course-name" href="https://www.eecs70.org/" rel="noopener" target="_blank">Discrete Math &amp; Probability<span aria-hidden="true">↗</span></a></th><td><span class="course-code">CS 70</span><span class="course-institution">UC Berkeley</span></td></tr>
+<tr><th scope="row"><a class="course-name" href="https://www2.eecs.berkeley.edu/Courses/EE66/" rel="noopener" target="_blank">Signals, Dynamics &amp; Information<span aria-hidden="true">↗</span></a></th><td><span class="course-code">EE 66</span><span class="course-institution">UC Berkeley</span></td></tr>
+<tr><th scope="row"><a class="course-name" href="https://ape.berkie.ee/" rel="noopener" target="_blank">Advanced PCB Engineering<span aria-hidden="true">↗</span></a></th><td><span class="course-code">APE</span><span class="course-institution">UC Berkeley</span></td></tr>
+<tr><th scope="row"><span class="course-name">Circuits</span></th><td><span class="course-community">Completed in community college</span></td></tr>
+<tr><th scope="row"><span class="course-name">Electromagnetics</span></th><td><span class="course-community">Completed in community college</span></td></tr>
+<tr><th scope="row"><span class="course-name">C/C++ Programming</span></th><td><span class="course-community">Completed in community college</span></td></tr>
+<tr><th scope="row"><span class="course-name">Data Structures</span></th><td><span class="course-community">Completed in community college</span></td></tr>
+<tr><th scope="row"><span class="course-name">Optics &amp; Introduction to Quantum</span></th><td><span class="course-community">Completed in community college</span></td></tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</section><section class="startup section experience-section chapter chapter-bytes" id="bytes">
+<div>
+<p class="eyebrow">04 / BYTES · MAY 2021 — APR 2025</p>
+<div class="bytes-wordmark"><img alt="Bytes" src="https://trybytes.ai/images/brand/logo.png"/><small>RESTAURANT TECHNOLOGY</small></div>
 <h2>Co-founding Bytes</h2>
 <div class="bytes-story-row"><div class="bytes-story-copy"><p class="role">Co-founder · Software, data infrastructure &amp; automation</p>
-<p>Bytes helps existing restaurants grow online orders by turning their menus into focused virtual brands on delivery platforms. I co-founded the company and built the software, data pipelines, and automation behind that process.</p>
+<p>Bytes helps existing restaurants grow online orders by turning their menus into focused virtual brands on delivery platforms. I co-founded the company and built the data systems, automation, and internal tools behind that process.</p>
 <div class="company-links">
-<button class="project-cta" data-project="bytes" type="button" aria-haspopup="dialog" aria-controls="project-dialog">View my contributions <span aria-hidden="true">→</span></button>
+<button aria-controls="project-dialog" aria-haspopup="dialog" class="project-cta" data-project="bytes" type="button">View my contributions <span aria-hidden="true">→</span></button>
 <a class="text-link" href="https://trybytes.ai/" rel="noopener" target="_blank">Visit Bytes ↗</a>
 </div>
 </div><figure class="bytes-event">
-<video aria-label="Bytes networking event" autoplay loop muted playsinline poster="assets/bytes-video.jpg" preload="metadata">
+<video aria-label="Bytes networking event" autoplay="" loop="" muted="" playsinline="" poster="assets/bytes-video.jpg" preload="metadata">
 <source src="assets/bytes-video.mp4" type="video/mp4"/>
 </video>
 </figure></div>
@@ -230,99 +313,7 @@
 <p>fragmented data sources unified in PostgreSQL</p>
 </div>
 </div>
-</section>
-<section class="section experience-section berkeley chapter chapter-berkeley" id="berkeley">
-<div class="section-head">
-<div>
-<div class="institution-lockup berkeley-lockup"><img alt="UC Berkeley" loading="lazy" src="https://brand.berkeley.edu/wp-content/uploads/2024/08/logo-variations-thumbnail-gold-blue-1.png"/><span>Electrical Engineering &amp; Computer Sciences</span></div>
-<p class="eyebrow">03 / COURSES</p>
-<h2>Courses</h2>
-</div>
-<p>My education and selected coursework in electrical engineering and computer science.</p>
-</div>
-<div class="education-course-grid" id="coursework">
-<div class="education-summary">
-<p class="date">EXPECTED MAY 2028</p>
-<h3>University of California, Berkeley</h3>
-<p class="role">B.S. Electrical Engineering &amp; Computer Sciences</p>
-<p class="education-gpa">GPA 4.0</p>
-<p>Building on community-college coursework in engineering, programming, and physics.</p>
-</div>
-<div class="education-courses">
-<p class="eyebrow">SELECTED COURSEWORK</p>
-<div class="course-table-wrap">
-<table class="course-table" aria-label="Courses and institutions">
-<thead><tr><th scope="col">Course</th><th scope="col">Institution</th></tr></thead>
-<tbody>
-<tr><th scope="row"><a class="course-name" href="https://cs61c.org/" target="_blank" rel="noopener">Computer Architecture<span aria-hidden="true">↗</span></a></th><td><span class="course-code">CS 61C</span><span class="course-institution">UC Berkeley</span></td></tr>
-<tr><th scope="row"><a class="course-name" href="https://www.eecs70.org/" target="_blank" rel="noopener">Discrete Math &amp; Probability<span aria-hidden="true">↗</span></a></th><td><span class="course-code">CS 70</span><span class="course-institution">UC Berkeley</span></td></tr>
-<tr><th scope="row"><a class="course-name" href="https://www2.eecs.berkeley.edu/Courses/EE66/" target="_blank" rel="noopener">Signals, Dynamics &amp; Information<span aria-hidden="true">↗</span></a></th><td><span class="course-code">EE 66</span><span class="course-institution">UC Berkeley</span></td></tr>
-<tr><th scope="row"><a class="course-name" href="https://ape.berkie.ee/" target="_blank" rel="noopener">Advanced PCB Engineering<span aria-hidden="true">↗</span></a></th><td><span class="course-institution">UC Berkeley</span></td></tr>
-<tr><th scope="row"><span class="course-name">Circuits</span></th><td><span class="course-community">Completed in community college</span></td></tr>
-<tr><th scope="row"><span class="course-name">Electromagnetics</span></th><td><span class="course-community">Completed in community college</span></td></tr>
-<tr><th scope="row"><span class="course-name">C/C++ Programming</span></th><td><span class="course-community">Completed in community college</span></td></tr>
-<tr><th scope="row"><span class="course-name">Data Structures</span></th><td><span class="course-community">Completed in community college</span></td></tr>
-<tr><th scope="row"><span class="course-name">Optics &amp; Introduction to Quantum</span></th><td><span class="course-community">Completed in community college</span></td></tr>
-</tbody>
-</table>
-</div>
-</div>
-</div>
-</section>
-<section class="section additional-work chapter chapter-personal chapter-projects pcb-canvas" id="projects">
-<span id="personal-projects" class="anchor-alias" aria-hidden="true"></span><span id="course-projects" class="anchor-alias" aria-hidden="true"></span>
-<div class="section-head"><div><p class="eyebrow">04 / PROJECTS</p><h2>Projects</h2></div><p>Selected work in digital design, analog electronics, power electronics, and experimental physics.</p></div>
-<div class="project-grid personal-project-grid projects-grid">
-<article class="project">
-<div class="cpu-preview visual">
-<img alt="Top-level RISC-V CPU datapath in Logisim-evolution" loading="lazy" src="assets/cpu-datapath.png"/>
-</div>
-<p class="eyebrow">COMPUTER ARCHITECTURE · IN PROGRESS</p>
-<h3>32-bit RISC-V CPU</h3>
-<p>Developing a 32-bit processor in Logisim-evolution, bringing together the ALU, register file, immediate generator, control logic, branch comparison, and load/store blocks.</p>
-<div class="tags">
-<span>Logisim-evolution</span>
-<span>32-bit datapath</span>
-<span>RISC-V</span>
-</div>
-<button class="project-cta" data-project="cpu" type="button" aria-haspopup="dialog" aria-controls="project-dialog">View project details <svg class="pcb-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="4" cy="12" r="1.5"/><path d="M6 12h14m-6-6 6 6-6 6"/></svg></button>
-</article>
-<article class="project">
-<div class="oscilloscope-preview visual">
-<img alt="Two-channel oscilloscope architecture showing analog inputs, ADC, FPGA, and USB connection to a computer" loading="lazy" src="assets/oscilloscope-architecture.png"/>
-</div>
-<p class="eyebrow">ANALOG &amp; DIGITAL HARDWARE · IN PROGRESS</p>
-<h3>Two-channel oscilloscope</h3>
-<p>Developing a two-channel oscilloscope with a team, connecting analog signal conditioning, high-speed conversion, FPGA acquisition, and a USB host interface.</p>
-<div class="tags"><span>Altium Designer</span><span>Analog front end</span><span>FPGA / ADC</span></div>
-<button class="project-cta" data-project="oscilloscope" type="button" aria-haspopup="dialog" aria-controls="project-dialog">View project details <svg class="pcb-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="4" cy="12" r="1.5"/><path d="M6 12h14m-6-6 6 6-6 6"/></svg></button>
-</article>
-<article class="project">
-<div class="inverter-card visual">
-<img alt="Original breadboard H-bridge with four capacitor gate drivers" loading="lazy" src="assets/inverter-four-cap.jpg"/>
-<small>H–BRIDGE / BIPOLAR OUTPUT</small>
-</div>
-<p class="eyebrow">POWER ELECTRONICS · 2025</p>
-<h3>DC-to-AC inverter</h3>
-<p>A discrete complementary-MOSFET H-bridge, iterated from four capacitor gate drivers to a simpler PMOS drive for a 20 V input.</p>
-<div class="tags">
-<span>MOSFETs</span>
-<span>Gate drivers</span>
-<span>IRF4905 / IRFZ44N</span>
-</div>
-<button class="project-cta" data-project="inverter" type="button" aria-haspopup="dialog" aria-controls="project-dialog">View project details <svg class="pcb-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="4" cy="12" r="1.5"/><path d="M6 12h14m-6-6 6 6-6 6"/></svg></button>
-</article>
-<article class="project">
-<div aria-hidden="true" class="fusion visual"><div class="orb"></div><small>INERTIAL ELECTROSTATIC CONFINEMENT</small></div>
-<p class="eyebrow">EXPERIMENTAL PHYSICS · IN PROGRESS</p>
-<h3>IEC plasma confinement</h3>
-<p>An independent fusion-device build integrating a vacuum chamber, electrode geometry, and dual-stage pumping.</p>
-<div class="tags"><span>Vacuum systems</span><span>High voltage</span><span>Experimental physics</span></div>
-<button class="project-cta" data-project="fusion" type="button" aria-haspopup="dialog" aria-controls="project-dialog">View project details <svg class="pcb-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="4" cy="12" r="1.5"/><path d="M6 12h14m-6-6 6 6-6 6"/></svg></button>
-</article>
-</div>
-</section>
-<section class="about section pcb-canvas" id="about">
+</section><section class="about section pcb-canvas" id="about">
 <div class="about-photo">
 <img alt="Hashem working with the electronics inside a radar enclosure" loading="lazy" src="assets/lab-portrait.jpg?v=8651"/>
 <span>RADAR HARDWARE INTEGRATION.</span>
@@ -330,8 +321,8 @@
 <div>
 <p class="eyebrow">05 / ABOUT</p>
 <h2>About me</h2>
-<p>I’m interested in how hardware and software work together—from the electronics inside a radar enclosure to the code that controls it and processes its data.</p>
-<p>At Berkeley, I’m building on that interest through my EECS studies and projects. My time at LBNL and Bytes has given me different ways to apply what I’m learning. I’m especially interested in embedded systems, wireless/RF, and digital IC design.</p>
+<p>I’m drawn to understanding technology from the fundamentals up: the physics behind a device, the properties of its materials, and the choices that shape what it can do. I enjoy tracing a complex system back to those foundations and understanding both its capabilities and its limits.</p>
+<p>That curiosity carries into my work across hardware and software, from radar electronics to the code that controls them and processes their data. Through my EECS studies at UC Berkeley, research at Berkeley Lab, and experience building Bytes, I’m learning to connect that understanding with practical engineering. I’m especially interested in embedded systems, wireless/RF, and digital IC design.</p>
 <div class="skills">
 <div>
 <h4>Software &amp; data</h4>
@@ -353,10 +344,10 @@
 </div>
 </section>
 <section class="resources section pcb-canvas">
-<p class="eyebrow">RESUME, CODE &amp; RESEARCH</p>
+<p class="eyebrow">RESUME, DESIGN &amp; RESEARCH</p>
 <div>
-<a href="https://github.com/hashemt02/menuGen" rel="noopener" target="_blank">
-<span>Menu generator — source code<small>Explore the Python project on GitHub</small>
+<a href="https://365.altium.com/files/92155BB1-210F-4413-8E50-1EC63BB96544" rel="noopener" target="_blank">
+<span>Scopii — interactive PCB viewer<small>Explore the board in 3D and inspect its PCB layers in Altium 365</small>
 </span>↗</a>
 <a href="assets/research-poster.pdf" rel="noopener" target="_blank">
 <span>CASIS 2026 research poster<small>Low-Power mmWave Radar Sensors for Atmospheric Boundary Layer Characterization</small>
@@ -385,16 +376,16 @@
 <span>Hashem Taleb · UC Berkeley EECS</span>
 <a href="#">Back to top ↑</a>
 </footer>
-<div class="signal-cursor" aria-hidden="true">
-<svg viewBox="0 0 62 42" role="presentation" focusable="false">
+<div aria-hidden="true" class="signal-cursor">
+<svg focusable="false" role="presentation" viewbox="0 0 62 42">
 <g class="diode-symbol">
-<path class="diode-wire" d="M2 23H14M39 23H59"/>
-<path class="diode-body" d="M14 10V36L38 23Z"/>
-<path class="diode-bar" d="M39 9V37"/>
+<path class="diode-wire" d="M2 23H14M39 23H59"></path>
+<path class="diode-body" d="M14 10V36L38 23Z"></path>
+<path class="diode-bar" d="M39 9V37"></path>
 </g>
 <g class="led-rays">
-<path d="M29 9L38 2M35 12L46 4"/>
-<path d="M38 2L34 3M38 2L37 6M46 4L42 5M46 4L45 8"/>
+<path d="M29 9L38 2M35 12L46 4"></path>
+<path d="M38 2L34 3M38 2L37 6M46 4L42 5M46 4L45 8"></path>
 </g>
 </svg>
 </div>
@@ -403,7 +394,7 @@
 <div id="dialog-content">
 </div>
 </dialog>
-<script src="app.js?v=20261104-natural-gallery">
+<script src="app.js?v=20261114-published">
 </script>
 </body>
 </html>

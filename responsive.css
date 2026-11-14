@@ -32,3 +32,272 @@
   aspect-ratio:auto;object-fit:contain;margin-inline:auto;
  }
 }
+
+/* Secondary projects sit below the two full-size project covers. */
+.chapter-projects .more-projects{margin-top:38px;padding-top:28px;border-top:1px solid var(--pcb-line)}
+.chapter-projects .more-projects>h3{font-size:22px;margin:0 0 18px;color:var(--pcb-text)}
+.more-projects-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}
+.more-project-tab{display:flex;align-items:center;justify-content:space-between;gap:20px;text-align:left;width:100%;padding:20px 22px;background:var(--pcb-surface);color:var(--pcb-text);border:1px solid var(--pcb-line);border-radius:8px;cursor:pointer;transition:border-color .2s,background .2s}
+.more-project-tab .eyebrow{display:block;color:var(--pcb-muted);font-size:9px;margin:0 0 8px}
+.more-project-tab strong{display:block;font:500 21px/1.25 var(--display);letter-spacing:-.03em}
+.more-project-arrow{color:var(--pcb-copper);font-size:24px;flex-shrink:0}
+.more-project-tab:hover{border-color:var(--pcb-copper);background:#1c2d34}
+@media(max-width:680px){.more-projects-grid{grid-template-columns:minmax(0,1fr);gap:12px}.more-project-tab{padding:18px}.more-project-tab strong{font-size:20px}}
+
+.chapter-projects .oscilloscope-preview{padding:0;background:#eee}
+.chapter-projects .oscilloscope-preview img{object-fit:contain}
+.scope-board-hero img{width:100%;height:auto;max-height:none!important;background:#eee!important}
+.scope-layout-gallery{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin:24px 0 36px}
+.scope-layout-gallery .detail-figure{margin:0;min-width:0}
+.scope-layout-gallery img{width:100%;height:auto;background:white!important}
+.scope-layout-gallery figcaption{font-size:11px;line-height:1.6}
+@media(max-width:680px){.scope-layout-gallery{grid-template-columns:1fr;gap:24px}}
+
+/* Keep the three inverter iterations together rather than in tall rows. */
+#dialog-content .iteration-list{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px;margin-top:24px}
+#dialog-content .iteration-list article{display:block;min-width:0;padding:18px 0 0}
+#dialog-content .iteration-list article>span{display:block;font-size:9px;margin-bottom:14px}
+#dialog-content .iteration-list h3{font-size:21px;line-height:1.25;margin:0 0 12px}
+#dialog-content .iteration-list p{font-size:13px;line-height:1.7;margin:0 0 16px}
+#dialog-content .iteration-list .detail-figure{margin:16px 0 0}
+#dialog-content .iteration-list .detail-figure img{width:100%;height:220px;max-height:220px;object-fit:contain;background:transparent}
+#dialog-content .iteration-list figcaption{font-size:10px;line-height:1.5;margin-top:8px}
+@media(max-width:760px){#dialog-content .iteration-list{grid-template-columns:1fr;gap:24px}#dialog-content .iteration-list article>div{display:flow-root}#dialog-content .iteration-list .detail-figure{max-width:260px}#dialog-content .iteration-list .detail-figure img{height:200px}}
+
+/* Match cover frames to the wide board render, avoiding letterboxing. */
+.chapter-projects.pcb-canvas .projects-grid .visual{height:auto;aspect-ratio:1832/862;padding:0;overflow:hidden;flex-shrink:0}
+.chapter-projects.pcb-canvas .projects-grid .oscilloscope-preview{background:#fff}
+.chapter-projects.pcb-canvas .projects-grid .oscilloscope-preview img{display:block;width:100%;height:100%;object-fit:contain;padding:0}
+.chapter-projects.pcb-canvas .projects-grid .cpu-preview img{width:100%;height:100%;object-fit:contain;padding:12px}
+.chapter-projects.pcb-canvas .projects-grid .project{min-width:0}
+.chapter-projects.pcb-canvas .projects-grid .project h3{line-height:1.2;overflow-wrap:break-word}
+.chapter-projects.pcb-canvas .projects-grid .tags{display:flex;flex-wrap:wrap;gap:8px}
+.chapter-projects.pcb-canvas .projects-grid .project-cta{max-width:100%;min-height:44px;padding:11px 18px}
+
+/* The shorter first iteration has room for a larger, uncropped photograph. */
+@media(min-width:761px){
+ #dialog-content .iteration-list article:first-child .detail-figure img{height:290px;max-height:290px;object-fit:contain}
+}
+
+/* Berkeley brand colors; retain the original layout and typography. */
+#berkeley{--chapter-accent:#FDB515;background:#002676;color:#fff;border-top-color:#FDB515}
+#berkeley .eyebrow,#berkeley .education-gpa,#berkeley .course-code,#berkeley .course-table thead th,#berkeley a.course-name span{color:#FDB515}
+#berkeley a.course-name{text-decoration-color:#FDB51580}
+#berkeley a.course-name:hover{color:#FDB515;text-decoration-color:currentColor}
+
+#berkeley .berkeley-lockup img{border:0;box-shadow:none}
+
+#berkeley .berkeley-lockup{gap:24px;align-items:center}
+#berkeley .berkeley-lockup img{width:280px;height:auto;max-width:100%;border:0;flex-shrink:0}
+@media(max-width:680px){#berkeley .berkeley-lockup{align-items:flex-start;gap:12px}#berkeley .berkeley-lockup img{width:240px}}
+
+/* The official preview image includes a faint line at its outer edge. */
+#berkeley .berkeley-lockup img{border:0!important;outline:0;box-shadow:none!important;clip-path:inset(2px)}
+
+#berkeley .berkeley-lockup span{font-size:clamp(12px,1.2vw,16px);line-height:1.5;letter-spacing:.06em}
+
+#dialog-content .radar-rainfall img{width:100%;height:auto;max-height:none;background:#14252c;border:0}
+
+/* Let the measurement plot use the reader width; keep deployment photos compact. */
+#dialog-content #radar-field .radar-rainfall{width:100%;max-width:100%;margin:28px 0}
+#dialog-content #radar-field .radar-rainfall>a{display:block;width:100%}
+#dialog-content #radar-field .radar-rainfall img{display:block;width:100%;height:auto;max-width:100%;max-height:none;object-fit:contain;background:#15242b}
+#dialog-content #radar-field .radar-rainfall figcaption{font-size:12px;line-height:1.65;margin:8px 0 0}
+#dialog-content .radar-field-gallery{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:24px;align-items:start;margin:28px 0}
+#dialog-content .radar-field-gallery .detail-figure{width:100%;min-width:0;max-width:100%;margin:0}
+#dialog-content .radar-field-gallery img{display:block;width:100%;height:300px;max-height:300px;object-fit:contain;background:transparent;border-radius:6px}
+#dialog-content .radar-field-gallery figcaption{font-size:12px;line-height:1.65;margin-top:10px;max-width:100%}
+@media(max-width:680px){#dialog-content .radar-field-gallery{grid-template-columns:1fr;gap:24px}#dialog-content .radar-field-gallery img{height:auto;max-height:320px}#dialog-content #radar-field .radar-rainfall{overflow-x:auto}#dialog-content #radar-field .radar-rainfall>a{min-width:640px}}
+
+#project-dialog #dialog-content .radar-cube-copy h4{font-size:21px;line-height:1.3;margin:0 0 12px}
+#project-dialog #dialog-content .radar-cube-copy p{font-size:17px;line-height:1.7;margin:0 0 25px}
+#project-dialog #dialog-content .radar-cube-copy p:last-child{margin-bottom:0}
+@media(max-width:680px){#project-dialog #dialog-content .radar-cube-copy p{font-size:16px}#project-dialog #dialog-content .radar-cube-copy h4{font-size:20px}}
+
+/* Frame the CFAR workstation around the right monitor and its plots. */
+#dialog-content .radar-cfar-crop{aspect-ratio:954/890;overflow:hidden}
+#dialog-content .detail-section .radar-cfar-crop img{display:block;width:128.57%;max-width:none;height:auto;max-height:none;transform:translateX(-22.22%);margin:0}
+
+#project-dialog .radar-deployment-milestone{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px;background:var(--reader-panel);border:1px solid var(--line);border-radius:8px;padding:24px;margin:24px 0 30px}
+#project-dialog .radar-deployment-milestone>div{display:flex;flex-direction:column;gap:6px}
+#project-dialog .radar-deployment-milestone strong{font:500 clamp(36px,5vw,58px)/1.1 var(--display);color:var(--accent)}
+#project-dialog .radar-deployment-milestone span{font-size:13px;color:var(--ink)}
+#project-dialog .radar-deployment-milestone>p{grid-column:1/-1;margin:0;font-size:11px;color:var(--muted)}
+
+#dialog-content .lab-memories-gallery{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px;align-items:start}
+#dialog-content .lab-memories-gallery .detail-figure{width:100%;max-width:100%;min-width:0;margin:0}
+#dialog-content .lab-memories-gallery .detail-figure>a{display:block;height:300px;overflow:hidden;border-radius:6px}
+#dialog-content .lab-memories-gallery img{width:100%;height:100%;max-height:none;object-fit:contain;background:transparent}
+#dialog-content .lab-memories-gallery .lab-group-crop img{object-fit:cover;object-position:center bottom;transform:scale(1.65);transform-origin:center bottom}
+#dialog-content .lab-memories-gallery figcaption{font-size:12px;line-height:1.6;margin-top:10px}
+@media(max-width:680px){#dialog-content .lab-memories-gallery{grid-template-columns:1fr}#dialog-content .lab-memories-gallery .detail-figure>a{height:320px}}
+
+@media(min-width:681px){
+ #dialog-content .lab-memories-gallery{grid-template-columns:minmax(0,1fr) minmax(0,.8fr) minmax(0,1.2fr);gap:18px}
+ #dialog-content .lab-memories-gallery .detail-figure:nth-child(2) img{object-fit:cover;object-position:center}
+ #dialog-content .lab-memories-gallery .detail-figure:nth-child(3) img{object-fit:cover;object-position:center}
+}
+
+#dialog-content .bytes-events-gallery{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:22px;align-items:start;margin:20px 0}
+#dialog-content .bytes-events-gallery .detail-figure{width:100%;max-width:100%;min-width:0;margin:0}
+#dialog-content .bytes-events-gallery .detail-figure>a{display:block;height:270px;overflow:hidden;border-radius:6px}
+#dialog-content .bytes-events-gallery img{width:100%;height:100%;max-height:none;object-fit:cover;object-position:center 65%}
+#dialog-content .bytes-events-gallery figcaption{font-size:12px;line-height:1.6;margin:8px 0 0}
+@media(max-width:680px){#dialog-content .bytes-events-gallery{grid-template-columns:1fr}#dialog-content .bytes-events-gallery .detail-figure>a{height:240px}}
+
+#dialog-content .detail-section .scope-board-hero{width:min(100%,660px);max-width:660px;margin:24px auto}
+#dialog-content .scope-board-hero>a{display:block;width:100%}
+#dialog-content .scope-board-hero img{display:block;width:100%;height:auto;max-width:100%;max-height:none;object-fit:contain}
+
+#dialog-content .detail-section .oscilloscope-diagram{width:100%;max-width:100%;margin:24px 0;padding:16px}
+#dialog-content .oscilloscope-diagram>a{display:block;width:100%}
+#dialog-content .oscilloscope-diagram img{display:block;width:100%;height:auto;max-width:100%;max-height:none;object-fit:contain}
+@media(max-width:680px){#dialog-content .detail-section .oscilloscope-diagram{padding:8px}}
+
+#dialog-content .scope-layout-gallery.layout-slideshow{display:block;width:100%;margin:24px 0 36px}
+#dialog-content .layout-slideshow .detail-figure{width:100%;max-width:100%;margin:0}
+#dialog-content .layout-slideshow .detail-figure[hidden]{display:none}
+#dialog-content .layout-slideshow .detail-figure>a{display:block;background:#fff;border-radius:6px;overflow:hidden}
+#dialog-content .layout-slideshow img{display:block;width:100%;height:auto;max-height:520px;object-fit:contain}
+#dialog-content .layout-slideshow figcaption{font-size:14px;margin:12px 0 16px}
+.layout-slide-controls{display:flex;align-items:center;justify-content:center;gap:12px;flex-wrap:wrap}
+.layout-slide-controls button{min-height:42px;padding:9px 15px;color:var(--ink);background:var(--reader-panel);border:1px solid var(--line);border-radius:5px;cursor:pointer;font-size:12px}
+.layout-slide-controls button:hover,.layout-slide-controls button[aria-current="true"]{color:var(--accent);border-color:var(--accent)}
+.layout-slide-pages{display:flex;gap:6px}
+@media(max-width:680px){.layout-slide-controls{gap:8px}.layout-slide-controls button{padding:8px 10px}.layout-slide-pages{gap:4px}}
+
+.scopii-document-links{display:flex;flex-wrap:wrap;gap:16px 28px;margin:24px 0 30px}.scopii-document-links a{font-size:14px}
+
+#dialog-content .detail-section .scope-board-hero{width:100%;max-width:100%;margin:24px 0}
+
+#dialog-content .scope-layout-gallery.layout-slideshow .detail-figure img{width:100%;height:auto;max-height:none;object-fit:contain}
+
+.scopii-3d-viewer{width:100%;margin:24px 0 28px;min-width:0}
+.scopii-3d-viewer iframe{display:block;width:100%;height:clamp(380px,60vh,720px);border:0;border-radius:8px;background:#101c22}
+.scopii-3d-viewer figcaption{font-size:12px;line-height:1.7;color:var(--muted);margin-top:10px}
+.scopii-3d-viewer figcaption a{margin-left:12px}
+@media(max-width:680px){.scopii-3d-viewer iframe{height:420px}.scopii-3d-viewer figcaption a{display:block;margin-left:0;margin-top:6px}}
+
+.scopii-interactive{width:100%;min-width:0;margin:24px 0;background:#101c22;border:1px solid #3a5159;border-radius:7px;overflow:hidden}
+.scopii-view-controls{display:flex;gap:8px;padding:10px;background:#101e25}
+.scopii-view-controls button{font:500 12px/1.4 'DM Sans',Arial,sans-serif;min-height:40px;padding:9px 16px;border:1px solid #3a5159;border-radius:5px;background:#1b2e36;color:#e8f0ee;cursor:pointer}
+.scopii-view-controls button[aria-pressed="true"]{border-color:#e0a46c;color:#e0a46c}
+.scopii-interactive iframe{display:block;width:100%;height:clamp(400px,60vh,720px);border:0;background:#fff}
+.scopii-card-viewer{margin:0 0 4px}
+.scopii-card-viewer iframe{height:360px}
+@media(max-width:680px){.scopii-interactive iframe{height:420px}.scopii-card-viewer iframe{height:320px}}
+
+.scopii-interactive .altium-ecad-viewer{width:100%;max-width:100%!important;max-height:none!important;height:600px!important;border:0!important}
+.scopii-card-viewer .altium-ecad-viewer{height:380px!important}
+@media(max-width:680px){.scopii-interactive .altium-ecad-viewer{height:420px!important}.scopii-card-viewer .altium-ecad-viewer{height:340px!important}}
+
+/* A quiet project update within the existing hero text column. */
+.hero.pcb-canvas .hero-recent-project{display:grid;grid-template-columns:minmax(0,1fr) 128px;align-items:center;gap:18px;width:100%;max-width:520px;margin:22px 0 0;padding:17px 0;text-align:left;background:transparent;color:var(--pcb-text);border:0;border-block:1px solid var(--pcb-line);border-radius:0;cursor:pointer}
+.hero-recent-copy{display:flex;flex-direction:column;align-items:flex-start;gap:8px;min-width:0}
+.hero-recent-label{font:500 9px/1.5 var(--mono);letter-spacing:.09em;color:var(--pcb-muted)}
+.hero-recent-copy strong{font:500 17px/1.35 var(--display);letter-spacing:-.02em}
+.hero-recent-description{font:400 12px/1.65 'DM Sans',Arial,sans-serif;color:var(--pcb-muted)}
+.hero-recent-link{font:500 12px/1.5 'DM Sans',Arial,sans-serif;color:var(--pcb-copper);margin-top:2px}
+.hero-recent-project img{display:block;width:128px;height:auto;border-radius:3px}
+.hero-recent-project:hover .hero-recent-link{text-decoration:underline;text-underline-offset:4px}
+.hero-recent-project:focus-visible{outline:2px solid var(--pcb-copper);outline-offset:5px}
+@media(max-width:1000px) and (min-width:681px){.hero.pcb-canvas .hero-recent-project{grid-template-columns:minmax(0,1fr) 95px;gap:12px}.hero-recent-project img{width:95px}.hero-recent-copy strong{font-size:16px}}
+@media(max-width:400px){.hero.pcb-canvas .hero-recent-project{grid-template-columns:minmax(0,1fr) 86px;gap:12px}.hero-recent-project img{width:86px}.hero-recent-copy strong{font-size:16px}}
+
+/* IEC notes use an editorial rhythm, rather than metric panels. */
+#project-dialog #detail-experience:has(.iec-notebook)>h2{font-size:clamp(25px,3vw,34px);line-height:1.2;letter-spacing:-.03em;margin-bottom:22px}
+.iec-notebook{max-width:850px}
+#project-dialog .iec-notebook section{margin:0;padding:18px 0;border-bottom:1px solid var(--line)}
+#project-dialog .iec-notebook .iec-journal-intro{padding-top:0}
+#project-dialog .iec-notebook h3{font-size:18px;line-height:1.4;letter-spacing:-.015em;font-weight:500;margin:0 0 10px}
+#project-dialog .iec-notebook p{font-size:14px;line-height:1.8;margin:0;max-width:760px}
+.iec-observations{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:28px;margin-top:14px}
+.iec-observations article{min-width:0}
+#project-dialog .iec-observations h4{font:500 12px/1.6 var(--mono);margin:0 0 9px}
+.iec-observations h4 span{color:var(--accent);margin-right:7px}
+#project-dialog .iec-observations p{font-size:13px;line-height:1.8}
+#project-dialog .iec-notebook .iec-journal-question{font-size:12px;color:var(--muted);margin-top:16px}
+.iec-equipment-table{width:100%;border-collapse:collapse;text-align:left;line-height:1.7}
+.iec-equipment-table th,.iec-equipment-table td{padding:10px 0;border-bottom:1px solid var(--line);vertical-align:top}
+.iec-equipment-table tr:last-child>*{border-bottom:0}
+.iec-equipment-table th{width:34%;padding-right:20px;font:400 11px/1.8 var(--mono);color:var(--muted)}
+.iec-equipment-table td{font-size:13px;color:var(--ink)}
+#project-dialog .iec-notebook .iec-journal-progress{font-size:12px;line-height:1.8;margin-top:16px;color:var(--muted)}
+.iec-journal-progress>span{font:500 10px/1.6 var(--mono);color:var(--accent);margin-right:10px}
+@media(max-width:600px){.iec-observations{grid-template-columns:1fr;gap:18px}.iec-equipment-table th{width:40%;padding-right:14px}}
+
+/* A slightly closer networking crop, centered on Hashem. */
+.hero.pcb-canvas .hero-networking>img{transform:scale(1.28);transform-origin:46% 62%}
+.hero.pcb-canvas .hero-networking:hover>img{transform:scale(1.28)}
+#dialog-content .bytes-events-gallery img[src*="bytes-networking"]{transform:scale(1.28);transform-origin:46% 62%;object-position:50% 62%}
+
+/* Compact academic header: crop only the logo asset's surrounding blue space. */
+#berkeley{padding-top:36px}
+#berkeley .berkeley-lockup{margin-bottom:18px;gap:24px}
+#berkeley .berkeley-lockup img{width:280px;height:84px;object-fit:cover;object-position:center;clip-path:inset(2px)}
+#berkeley .section-head{margin-bottom:24px}
+#berkeley .section-head .eyebrow{margin-bottom:12px}
+#berkeley .education-course-grid{margin-top:20px;padding-top:22px}
+@media(max-width:680px){#berkeley{padding-top:28px}#berkeley .berkeley-lockup{gap:10px;margin-bottom:16px}#berkeley .berkeley-lockup img{width:240px;height:72px}}
+
+/* Phone layout shared by the homepage and all six project readers. */
+@media(max-width:680px){
+ .site-header.pcb-canvas nav{width:100%;display:flex;flex-wrap:wrap;gap:10px 18px}
+ .site-header.pcb-canvas nav a{display:inline-flex!important;align-items:center;min-height:36px}
+ .site-header.pcb-canvas .brand{max-width:100%}
+ .hero.pcb-canvas .hero-metadata p{font-size:13px;line-height:1.65}
+ .hero.pcb-canvas .hero-recent-project{grid-template-columns:minmax(0,1fr) 86px;gap:12px}
+ .hero.pcb-canvas .hero-recent-project img{width:86px}
+ .hero.pcb-canvas .hero-recent-copy strong{font-size:16px}
+ .experience-links.chapter-links{grid-template-columns:minmax(0,1fr)}
+ .chapter-links a,.section-head>div,.education-summary,.education-courses{min-width:0}
+ #berkeley .berkeley-lockup span{overflow-wrap:anywhere}
+ #berkeley .course-table .course-name{font-size:14px;line-height:1.5}
+ .chapter-projects.pcb-canvas .project h3{font-size:25px}
+ .chapter-projects.pcb-canvas .project>p:not(.eyebrow){font-size:14px}
+ #project-dialog{width:calc(100% - 16px);max-width:calc(100% - 16px);max-height:94dvh;margin:auto}
+ #project-dialog .detail-header{padding:28px 38px 22px 20px}
+ #project-dialog .detail-section{padding:26px 20px 30px;min-width:0}
+ #project-dialog #dialog-content{min-width:0;max-width:100%}
+ #project-dialog .detail-section p{font-size:14px;line-height:1.8;overflow-wrap:break-word}
+ #project-dialog .detail-nav{padding:9px 12px;gap:6px;flex-wrap:wrap}
+ #project-dialog .detail-nav button{min-height:44px;padding:8px 10px;font-size:10px}
+ #project-dialog .detail-section :is(section,article,figure,table){min-width:0}
+ #project-dialog .detail-section :is(pre,.equation-stack,.equation-callout){max-width:100%;overflow-x:auto}
+ #project-dialog .detail-section :is(a,code){overflow-wrap:anywhere}
+ #dialog-content .radar-cfar-pair{grid-template-columns:minmax(0,1fr);gap:22px}
+ #dialog-content .reflector-animations{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+ #dialog-content .reflector-experiment{padding:16px}
+ #dialog-content .pipeline-diagram{display:flex;flex-wrap:wrap;justify-content:center;gap:8px;padding:12px}
+ #dialog-content .pipeline-diagram span{min-width:0;white-space:normal}
+ #dialog-content .scopii-interactive{max-width:100%;min-width:0}
+ #dialog-content .scopii-interactive iframe{height:400px;max-width:100%}
+ .scopii-card-viewer iframe{height:320px;max-width:100%}
+ #dialog-content .scope-layout-gallery.layout-slideshow .layout-slide-controls{display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px}
+ #dialog-content .layout-slide-controls .layout-slide-pages{grid-row:2;grid-column:1/-1;justify-content:center}
+ #dialog-content .layout-slide-controls button{min-height:44px;padding:8px;font-size:12px}
+ #dialog-content .layout-slideshow figcaption{font-size:12px;line-height:1.65}
+ #dialog-content .scope-schematic.schematic-description-row{gap:16px;margin-top:28px;padding-top:22px}
+ #dialog-content .schematic-description h3{font-size:23px;line-height:1.3}
+ #dialog-content .schematic-description>.eyebrow{font-size:10px;letter-spacing:.04em}
+ #dialog-content .scopii-document-links{gap:14px;margin:20px 0}
+ #dialog-content .scopii-document-links a{min-height:36px;font-size:13px}
+ #dialog-content .detail-video figcaption{flex-wrap:wrap;gap:10px}
+ #dialog-content .detail-video button{min-height:40px}
+ #dialog-content .iec-equipment-table th{font-size:11px}
+ #dialog-content .iec-equipment-table td{font-size:13px}
+ #dialog-content .iec-notebook .iec-journal-progress{font-size:13px}
+ #dialog-content .radar-deployment-milestone{gap:16px;padding:18px}
+ .contact>a{overflow-wrap:anywhere}
+ .resources a{gap:14px;font-size:20px;line-height:1.35}
+ .resources a>span{min-width:0;overflow-wrap:break-word}
+}
+@media(max-width:360px){
+ #project-dialog .detail-section{padding-inline:16px}
+ #project-dialog .detail-nav{gap:5px;padding-inline:8px}
+ #project-dialog .detail-nav button{padding-inline:7px;font-size:9px}
+ .hero.pcb-canvas .actions{gap:16px}
+ #dialog-content .iec-equipment-table th,#dialog-content .iec-equipment-table td{display:block;width:100%}
+ #dialog-content .iec-equipment-table th{padding-bottom:0;border-bottom:0}
+ #dialog-content .iec-equipment-table td{padding-top:4px}
+}
