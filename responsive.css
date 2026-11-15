@@ -324,3 +324,9 @@
 }
 
 @media(max-width:680px){#dialog-content .layout-slide-pages{flex-wrap:wrap}#dialog-content .layout-slide-pages button{min-width:38px}}
+
+/* Let PCB slides use the full reader width rather than the shared figure cap. */
+#dialog-content .detail-section .scope-layout-gallery.layout-slideshow .detail-figure img{
+ width:100%;max-width:100%;height:auto;max-height:none;margin:0;object-fit:contain;
+}
+#dialog-content .scope-layout-gallery.layout-slideshow .detail-figure>a{background:#c8c8c8;}
