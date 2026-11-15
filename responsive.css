@@ -322,3 +322,5 @@
  .chapter-lbnl .field-notes .photo-grid{grid-template-columns:minmax(0,1fr) minmax(0,1.5fr) minmax(0,1fr)}
  .chapter-lbnl .field-notes .photo-grid .hardware-bench-photo img{object-position:45% center}
 }
+
+@media(max-width:680px){#dialog-content .layout-slide-pages{flex-wrap:wrap}#dialog-content .layout-slide-pages button{min-width:38px}}
