@@ -234,7 +234,7 @@ function setupLayoutSlideshow(container){
   const b=document.createElement('button');b.type='button';b.textContent=slide.dataset.layer||'L'+(i+1);b.setAttribute('aria-label','Show '+b.textContent+' layer');b.addEventListener('click',()=>{show(i);pause();});pages.append(b);return b;
  });
  function show(i){current=(i+slides.length)%slides.length;slides.forEach((slide,j)=>{slide.hidden=j!==current;});buttons.forEach((b,j)=>b.setAttribute('aria-current',j===current?'true':'false'));}
- function sync(){clearInterval(timer);toggle.textContent=playing?'Pause':'Play';toggle.setAttribute('aria-label',playing?'Pause automatic slideshow':'Play automatic slideshow');if(playing)timer=setInterval(()=>{if(!document.hidden&&dialog.open&&!gallery.matches(':hover')&&!gallery.contains(document.activeElement))show(current+1);},5000);}
+ function sync(){clearInterval(timer);toggle.textContent=playing?'Pause':'Play';toggle.setAttribute('aria-label',playing?'Pause automatic slideshow':'Play automatic slideshow');if(playing)timer=setInterval(()=>{if(!document.hidden&&dialog.open&&!gallery.matches(':hover')&&!gallery.contains(document.activeElement))show(current+1);},3000);}
  function pause(){playing=false;sync();}
  controls.querySelector('[data-slide-prev]').addEventListener('click',()=>{show(current-1);pause();});
  controls.querySelector('[data-slide-next]').addEventListener('click',()=>{show(current+1);pause();});
