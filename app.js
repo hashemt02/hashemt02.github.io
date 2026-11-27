@@ -160,7 +160,7 @@ function layoutSchematicDescriptions(container){
 
 const dialog=document.querySelector('dialog'),content=document.querySelector('#dialog-content');
 dialog.setAttribute('aria-labelledby','detail-title');
-function openProject(key){const p=projects[key];content.innerHTML=`<header class="detail-header"><p class="eyebrow">${p.label}</p><h2 id="detail-title">${p.title}</h2></header><nav class="detail-nav" aria-label="Project sections"><button type="button" data-jump="technical">01 / Project details</button><button type="button" data-jump="experience">02 / My experience</button><button type="button" data-dismiss>Close ×</button></nav><section class="detail-section" id="detail-technical" aria-labelledby="technical-title"><p class="eyebrow">01 / PROJECT DETAILS</p><h2 id="technical-title">Project details</h2>${p.technical}</section><section class="detail-section detail-experience" id="detail-experience" aria-labelledby="experience-title"><p class="eyebrow">02 / MY EXPERIENCE</p><h2 id="experience-title">${p.storyTitle}</h2>${p.story}</section>`;content.querySelectorAll('[data-jump]').forEach(b=>b.addEventListener('click',()=>document.getElementById('detail-'+b.dataset.jump).scrollIntoView({behavior:matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth',block:'start'})));content.querySelector('[data-dismiss]').addEventListener('click',()=>dialog.close());dialog.showModal();if(signalCursor)dialog.appendChild(signalCursor);dialog.scrollTop=0;setupLayoutSlideshow(content);updateDeploymentDays(content);compactFigureDescriptions(content);layoutSchematicDescriptions(content);setupGifPairs(content);content.querySelectorAll('video').forEach(silenceVideo);content.querySelectorAll('video').forEach(video=>{
+function openProject(key){const p=projects[key];if(!p)return;content.innerHTML=`<header class="detail-header"><p class="eyebrow">${p.label}</p><h2 id="detail-title">${p.title}</h2></header><nav class="detail-nav" aria-label="Project sections"><button type="button" data-jump="technical">01 / Project details</button><button type="button" data-jump="experience">02 / My experience</button><button type="button" data-dismiss>Close ×</button></nav><section class="detail-section" id="detail-technical" aria-labelledby="technical-title"><p class="eyebrow">01 / PROJECT DETAILS</p><h2 id="technical-title">Project details</h2>${p.technical}</section><section class="detail-section detail-experience" id="detail-experience" aria-labelledby="experience-title"><p class="eyebrow">02 / MY EXPERIENCE</p><h2 id="experience-title">${p.storyTitle}</h2>${p.story}</section>`;content.querySelectorAll('[data-jump]').forEach(b=>b.addEventListener('click',()=>document.getElementById('detail-'+b.dataset.jump).scrollIntoView({behavior:matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth',block:'start'})));content.querySelector('[data-dismiss]').addEventListener('click',()=>dialog.close());dialog.showModal();if(signalCursor)dialog.appendChild(signalCursor);dialog.scrollTop=0;setupLayoutSlideshow(content);updateDeploymentDays(content);compactFigureDescriptions(content);layoutSchematicDescriptions(content);setupGifPairs(content);content.querySelectorAll('video').forEach(silenceVideo);content.querySelectorAll('video').forEach(video=>{
  const toggle=video.closest('figure').querySelector('[data-video-toggle]');
  const updateToggle=()=>{if(toggle)toggle.textContent=video.paused?'Play video':'Pause video';};
  if(toggle)toggle.addEventListener('click',()=>{if(video.paused){video.play().catch(updateToggle);}else{video.pause();}});
@@ -169,11 +169,11 @@ function openProject(key){const p=projects[key];content.innerHTML=`<header class
  video.play().catch(updateToggle);
  updateToggle();
 });}
-document.querySelectorAll('[data-project]').forEach(b=>b.addEventListener('click',()=>openProject(b.dataset.project)));
+document.querySelectorAll('[data-project]').forEach(b=>b.addEventListener('click',()=>{history.pushState({project:true},'',projectPath(b.dataset.project));openProject(b.dataset.project);}));
 document.querySelector('.close').addEventListener('click',()=>dialog.close());
 dialog.addEventListener('click',e=>{if(e.target===dialog){const r=dialog.getBoundingClientRect();if(e.clientX<r.left||e.clientX>r.right||e.clientY<r.top||e.clientY>r.bottom)dialog.close()}});
 
-dialog.addEventListener('close',()=>{content.querySelectorAll('video').forEach(video=>video.pause());content.querySelectorAll('[data-gif-src]').forEach(img=>{img.src=img.dataset.stillSrc;});if(signalCursor)document.body.appendChild(signalCursor);});
+dialog.addEventListener('close',()=>{if(!syncingProjectRoute&&projectFromPath())history.pushState({},'','/');content.querySelectorAll('video').forEach(video=>video.pause());content.querySelectorAll('[data-gif-src]').forEach(img=>{img.src=img.dataset.stillSrc;});if(signalCursor)document.body.appendChild(signalCursor);});
 
 if ('IntersectionObserver' in window && !matchMedia('(prefers-reduced-motion: reduce)').matches) {
  const observer=new IntersectionObserver(entries=>entries.forEach(entry=>{if(entry.isIntersecting){entry.target.classList.add('reveal');observer.unobserve(entry.target)}}),{threshold:.08});
@@ -244,3 +244,21 @@ function setupLayoutSlideshow(container){
  dialog.addEventListener('close',layoutSlideCleanup,{once:true});
 }
 
+
+// Clean project links, including direct entry from GitHub Pages route pages.
+const projectSlugs={oscilloscope:'scopii',cpu:'riscv',inverter:'inverter',fusion:'iec',radar:'berkeley-lab',bytes:'bytes'};
+let syncingProjectRoute=false;
+function projectPath(key){return '/'+projectSlugs[key]+'/';}
+function projectFromPath(){const slug=location.pathname.replace(/^\/|\/$/g,'');return Object.keys(projectSlugs).find(key=>projectSlugs[key]===slug);}
+function syncProjectRoute(){
+ syncingProjectRoute=true;
+ const key=projectFromPath();
+ if(key)openProject(key);else if(dialog.open)dialog.close();
+ syncingProjectRoute=false;
+}
+const entryParams=new URLSearchParams(location.search);
+const entrySlug=entryParams.get('project');
+const entryKey=Object.keys(projectSlugs).find(key=>projectSlugs[key]===entrySlug);
+if(entryKey){entryParams.delete('project');const query=entryParams.toString();history.replaceState({},'',projectPath(entryKey)+(query?'?'+query:'')+location.hash);}
+window.addEventListener('popstate',syncProjectRoute);
+syncProjectRoute();
